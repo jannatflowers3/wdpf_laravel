@@ -1,0 +1,33 @@
+[bcmath] 
+2 .### extension=xmlrpc comment out korte hobe####### = xampp = confiq->phpini
+1.  composer create-project --prefer-dist laravel/laravel:^7.0 wdpf_laravel_project1
+2. php artisan serve
+3. php artisan  = routing are here
+4. php artisan environment
+5. .env file database connection   /OR confiq=>database =>database name change
+6. resourses=>views=>different page  data content show korbe = welcome.blade.php
+7. routes=>web.php te main site ta show korbe all page routing hobe
+8. App=>Http=>controller  = php artisan make:controller Homecontroller
+controller a return korbo resources =>view page a =>routing kora hobe = routes=>web.php
+
+ file k add kore a = @extends('backend/layouts/left_sidebar')
+/ OR . diye o kora jai 
+
+main pages a
+
+@extends('backend.layouts/app')
+@section("content");
+
+@endsection
+
+   ai content k   @yield('content');
+      app.blade.php te 
+
+9. php artisan make:migration products
+10. php artisan migrate
+10 . php artisan route:list  routes all routing dekha jabe
+11. php artisan migrate:refresh             == ager data r sathe new field add korbe = auto icnrements hole 
+ unsigned hobe 1,2,3, serila onojai hobe
+12.  php artisan make:model productModel
+13 .= model folder ar modhe productmodel asbe =  php artisan make:model models/product
+ 
