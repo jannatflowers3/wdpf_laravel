@@ -58,109 +58,109 @@
                         <ul class="country-list text-center gy-2">
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="assests_template./images/flags/arg.png" alt="" class="country-flag">
+                                    <img src="assestes/images/flags/arg.png" alt="" class="country-flag">
                                     <span class="country-name">Argentina</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="assests_template./images/flags/aus.png" alt="" class="country-flag">
+                                    <img src="assestes/images/flags/aus.png" alt="" class="country-flag">
                                     <span class="country-name">Australia</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="assests_template./images/flags/bangladesh.png" alt="" class="country-flag">
+                                    <img src="assestes/images/flags/bangladesh.png" alt="" class="country-flag">
                                     <span class="country-name">Bangladesh</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="assests_template./images/flags/canada.png" alt="" class="country-flag">
+                                    <img src="assestes/images/flags/canada.png" alt="" class="country-flag">
                                     <span class="country-name">Canada <small>(English)</small></span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="assests_template./images/flags/china.png" alt="" class="country-flag">
+                                    <img src="assestes/images/flags/china.png" alt="" class="country-flag">
                                     <span class="country-name">Centrafricaine</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="assests_template./images/flags/china.png" alt="" class="country-flag">
+                                    <img src="assestes/images/flags/china.png" alt="" class="country-flag">
                                     <span class="country-name">China</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="assests_template./images/flags/french.png" alt="" class="country-flag">
+                                    <img src="assestes/images/flags/french.png" alt="" class="country-flag">
                                     <span class="country-name">France</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="assests_template./images/flags/germany.png" alt="" class="country-flag">
+                                    <img src="assestes/images/flags/germany.png" alt="" class="country-flag">
                                     <span class="country-name">Germany</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="assests_template./images/flags/iran.png" alt="" class="country-flag">
+                                    <img src="assestes/images/flags/iran.png" alt="" class="country-flag">
                                     <span class="country-name">Iran</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="assests_template./images/flags/italy.png" alt="" class="country-flag">
+                                    <img src="assestes/images/flags/italy.png" alt="" class="country-flag">
                                     <span class="country-name">Italy</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="assests_template./images/flags/mexico.png" alt="" class="country-flag">
+                                    <img src="assestes/images/flags/mexico.png" alt="" class="country-flag">
                                     <span class="country-name">México</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="assests_template./images/flags/philipine.png" alt="" class="country-flag">
+                                    <img src="assestes/images/flags/philipine.png" alt="" class="country-flag">
                                     <span class="country-name">Philippines</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="assests_template./images/flags/portugal.png" alt="" class="country-flag">
+                                    <img src="assestes/images/flags/portugal.png" alt="" class="country-flag">
                                     <span class="country-name">Portugal</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="assests_template./images/flags/s-africa.png" alt="" class="country-flag">
+                                    <img src="assestes/images/flags/s-africa.png" alt="" class="country-flag">
                                     <span class="country-name">South Africa</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="assests_template./images/flags/spanish.png" alt="" class="country-flag">
+                                    <img src="assestes/images/flags/spanish.png" alt="" class="country-flag">
                                     <span class="country-name">Spain</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="assests_template./images/flags/switzerland.png" alt="" class="country-flag">
+                                    <img src="assestes/images/flags/switzerland.png" alt="" class="country-flag">
                                     <span class="country-name">Switzerland</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="assests_template./images/flags/uk.png" alt="" class="country-flag">
+                                    <img src="assestes/images/flags/uk.png" alt="" class="country-flag">
                                     <span class="country-name">United Kingdom</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="assests_template./images/flags/english.png" alt="" class="country-flag">
+                                    <img src="assestes/images/flags/english.png" alt="" class="country-flag">
                                     <span class="country-name">United State</span>
                                 </a>
                             </li>
@@ -171,9 +171,9 @@
         </div><!-- .modla-dialog -->
     </div><!-- .modal -->
     <!-- JavaScript -->
-    <script src="assests_template./assets/js/bundle.js?ver=3.1.1"></script>
-    <script src="assests_template./assets/js/scripts.js?ver=3.1.1"></script>
-    <script src="assests_template./assets/js/charts/chart-ecommerce.js?ver=3.1.1"></script>
+    <script src="assestes/assets/js/bundle.js?ver=3.1.1"></script>
+    <script src="assestes/assets/js/scripts.js?ver=3.1.1"></script>
+    <script src="assestes/assets/js/charts/chart-ecommerce.js?ver=3.1.1"></script>
 </body>
 
 </html>

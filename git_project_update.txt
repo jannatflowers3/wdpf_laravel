@@ -1,0 +1,38 @@
+ 1. composer install/update
+2. env example k rename kore .env kore database connect korte hobe 
+3. php artisan key:generate
+4.  php artisan migrate  ==database ar data migrate hobe
+5.  php artisan db:seed   == database golo all data chole asbe 
+
+
+################## Laravel 8 version #################
+php artisan --version
+php artisan -v
+ composer create-project laravel/laravel:^8.0 = 8.50 only 8.50 install hobe ^8.0 (8-9) ar modhe install hobe
+
+1.  composer create-project laravel/laravel:^8.0 wdpf_laravel_project1
+2. php artisan serve
+
+3. env file edit
+migration and controller create aksathe hobe
+4. php artisan make:model Product -mc
+5. php artisan make:model Product -mcr ==   with resource edit/delete/
+6. php artisan migrate 
+7. php artisan migrate:refresh  ager field ar edit or add kore new kore kora 
+8.  php artisan make:seeder ProductSeeder
+9.  php artisan db:seed
+
+####### db seeder database #################
+https://laravel.com/docs/8.x/seeding#main-content
+
+ ############################# product factory #############
+1. php artisan make:factory ProductFactory --model=Product
+
+php artisan migrate:fresh --seed  fresh only value golo delete hobe 
+
+php artisan db:seed
+
+########### Routing list #############
+    1.  php artisan route:list 
+        Route::get('/', [DashboardController::class, 'index'])->name('home');
+        href="{{route('home')}}"

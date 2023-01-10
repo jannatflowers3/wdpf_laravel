@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
     <!-- Fav Icon  -->
-    <link rel="shortcut icon" href="assests_template./images/favicon.png">
+    <link rel="shortcut icon" href="assestes/images/favicon.png">
     <!-- Page Title  -->
     <title>Default Dashboard | DashLite Admin Template</title>
     <!-- StyleSheets  -->
-    <link rel="stylesheet" href="assests_template./assets/css/dashlite.css?ver=3.1.1">
-    <link id="skin-default" rel="stylesheet" href="assests_template./assets/css/theme.css?ver=3.1.1">
+    <link rel="stylesheet" href="assestes/assets/css/dashlite.css?ver=3.1.1">
+    <link id="skin-default" rel="stylesheet" href="assestes/assets/css/theme.css?ver=3.1.1">
 </head>
 
 <body class="nk-body bg-lighter npc-default has-sidebar ">

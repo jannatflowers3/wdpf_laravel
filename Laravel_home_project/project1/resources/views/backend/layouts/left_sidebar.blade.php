@@ -3,9 +3,9 @@
                 <div class="nk-sidebar-element nk-sidebar-head">
                     <div class="nk-sidebar-brand">
                         <a href="html/index.html" class="logo-link nk-sidebar-logo">
-                            <img class="logo-light logo-img" src="assests_template./images/logo.png" srcset="assests_template./images/logo2x.png 2x" alt="logo">
-                            <img class="logo-dark logo-img" src="assests_template./images/logo-dark.png" srcset="assests_template./images/logo-dark2x.png 2x" alt="logo-dark">
-                            <img class="logo-small logo-img logo-img-small" src="assests_template./images/logo-small.png" srcset="assests_template./images/logo-small2x.png 2x" alt="logo-small">
+                            <img class="logo-light logo-img" src="assestes/images/logo.png" srcset="assestes/images/logo2x.png 2x" alt="logo">
+                            <img class="logo-dark logo-img" src="assestes/images/logo-dark.png" srcset="assestes/images/logo-dark2x.png 2x" alt="logo-dark">
+                            <img class="logo-small logo-img logo-img-small" src="assestes/images/logo-small.png" srcset="assestes/images/logo-small2x.png 2x" alt="logo-small">
                         </a>
                     </div>
                     <div class="nk-menu-trigger me-n2">
