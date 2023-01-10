@@ -1,5 +1,8 @@
 [bcmath] 
 2 .### extension=xmlrpc comment out korte hobe####### = xampp = confiq->phpini
+$############  composer install a issue hole ai command =
+===== composer install -ignore-platform-reqs
+##########################################################################
 1.  composer create-project --prefer-dist laravel/laravel:^7.0 wdpf_laravel_project1
 2. php artisan serve
 3. php artisan  = routing are here
@@ -30,4 +33,15 @@ main pages a
  unsigned hobe 1,2,3, serila onojai hobe
 12.  php artisan make:model productModel
 13 .= model folder ar modhe productmodel asbe =  php artisan make:model models/product
+
+
+
+
+
+
+
+
+
+
+
  
