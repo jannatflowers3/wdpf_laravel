@@ -19,7 +19,8 @@ class Products extends Migration
             $table->string("product_descriptions", 300);
             $table->double("product_price", 6, 2);
             $table->tinyInteger("product_category");
-            $table->string("product_img");
+            $table->mediumInteger("product_stock");
+            $table->string("product_img")->nullable();
             $table->timestamps();
 
 

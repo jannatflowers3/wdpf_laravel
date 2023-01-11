@@ -35,4 +35,5 @@ php artisan db:seed
 ########### Routing list #############
     1.  php artisan route:list 
         Route::get('/', [DashboardController::class, 'index'])->name('home');
+
         href="{{route('home')}}"

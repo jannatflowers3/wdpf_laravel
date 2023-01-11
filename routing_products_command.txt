@@ -1,0 +1,22 @@
+ link = 1.   href="{{url('/products')}}"
+OR  =    href="{{URL::TO('/products')}}"
+description ar paragraphp ar 
+
+{{Str::limit($product->product_descriptions,50,'>>>')}}
+   restfull model korar jonno  edit/delete/ thakbe
+ 3.   php artisan make:model Category -mcr
+
+
+
+################# routing dekha ################### 
+php artisan route:list
+4.  database ar field change korar jonno 
+migration change korte hobe => factory te giye change korte hobe
+table 
+ 2.  php artisan migrate:reset
+ 3 .  php artisan migrate
+
+
+########################category ##########
+ 1 .  php artisan make:model Category -mcr
+php artisan migrate
