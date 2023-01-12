@@ -15,10 +15,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-           $data['cats'] = Category::get();
-        // $data['cats'] = Category::orderBy('cat_name','DESC')->get();
-        $data['products'] = Product::orderBy('id','DESC')->get();
-    return view("backend.product.index",$data);
+                 $products = Product::latest()->paginate(10);
+        $cats= Category::orderBy('cat_name','ASC')->get();
+        // $data['products'] = Product::orderBy('id','DESC')->get();
+    return view("backend.product.index",compact('products','cats'));
     
     // echo "<pre>";
     //     print_r($data);

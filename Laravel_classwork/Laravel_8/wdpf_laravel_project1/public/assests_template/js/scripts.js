@@ -873,3 +873,8 @@
 
     return NioApp;
 })(NioApp, jQuery);
+$(document).ready(function(){
+    $('#addnew').click(function(){
+         alert('hello')
+    })
+})

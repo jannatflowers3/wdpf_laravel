@@ -142,7 +142,8 @@
                                             <div class="card-inner">
                                                 <div class="nk-block-between-md g-3">
                                                     <div class="g">
-                                                        <ul class="pagination justify-content-center justify-content-md-start">
+                                                   {{$products->onEachSide(5)->links() }}
+                                                        {{-- <ul class="pagination justify-content-center justify-content-md-start">
                                                             <li class="page-item"><a class="page-link" href="#"><em class="icon ni ni-chevrons-left"></em></a></li>
                                                             <li class="page-item"><a class="page-link" href="#">1</a></li>
                                                             <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -150,7 +151,7 @@
                                                             <li class="page-item"><a class="page-link" href="#">6</a></li>
                                                             <li class="page-item"><a class="page-link" href="#">7</a></li>
                                                             <li class="page-item"><a class="page-link" href="#"><em class="icon ni ni-chevrons-right"></em></a></li>
-                                                        </ul><!-- .pagination -->
+                                                        </ul><!-- .pagination --> --}}
                                                     </div>
                                                     <div class="g">
                                                         <div class="pagination-goto d-flex justify-content-center justify-content-md-start gx-3">
@@ -260,7 +261,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-12">
-                                                <button class="btn btn-primary" type="submit"><em class="icon ni ni-plus"></em><span>Add New</span></button>
+                                                <button class="btn btn-primary" type="submit" id="addnew"><em class="icon ni ni-plus"></em><span>Add New</span></button>
                                             </div>
                                         </form>
                                         </div>
