@@ -174,6 +174,8 @@
     <script src="assests_template./assets/js/bundle.js?ver=3.1.1"></script>
     <script src="assests_template./assets/js/scripts.js?ver=3.1.1"></script>
     <script src="assests_template./assets/js/charts/chart-ecommerce.js?ver=3.1.1"></script>
+  
+
 </body>
 
 </html>

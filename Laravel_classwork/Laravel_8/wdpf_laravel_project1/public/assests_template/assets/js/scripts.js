@@ -962,3 +962,13 @@
   NioApp.init();
   return NioApp;
 }(NioApp, jQuery);
+
+$(document).ready(function(){
+  $('#addnew').click(function(){
+      var values = $('form').serialize() ;
+      $.post("products",values,function(data){
+            alert(data);
+      }) 
+  
+  })
+})

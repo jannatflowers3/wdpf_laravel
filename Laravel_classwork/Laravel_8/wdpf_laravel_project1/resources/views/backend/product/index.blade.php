@@ -2,6 +2,13 @@
 @section("content");
 
 <div class="nk-content-body">
+    
+    @if($msg = Session::get('msg'))
+    <div class="alert alert-success">
+     {{$msg}}
+    </div>
+ 
+    @endif 
                                 <div class="nk-block-head nk-block-head-sm">
                                     <div class="nk-block-between">
                                         <div class="nk-block-head-content">
@@ -142,7 +149,7 @@
                                             <div class="card-inner">
                                                 <div class="nk-block-between-md g-3">
                                                     <div class="g">
-                                                   {{$products->onEachSide(5)->links() }}
+                                                   {{$products->links('vendor.pagination.bootstrap-4') }}
                                                         {{-- <ul class="pagination justify-content-center justify-content-md-start">
                                                             <li class="page-item"><a class="page-link" href="#"><em class="icon ni ni-chevrons-left"></em></a></li>
                                                             <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -198,7 +205,7 @@
                                     </div><!-- .nk-block-head -->
                                     <div class="nk-block">  
                                         <div class="row g-3">
-                                            <form action ="{{url('/products')}}" method="post">
+                                            <form action ="{{url('/products')}}" method="post" enctype="multipart/form-data">
                                                 @csrf
                                             <div class="col-12">
                                                 <div class="form-group">
@@ -254,10 +261,10 @@
                                             
                                             <div class="col-12">
                                                 <div class="upload-zone small bg-lighter my-2">
-                                                    <div class="dz-message">
+                                                    {{-- <div class="dz-message">
                                                         <input type="file" class="dz-message">
                                                         <span class="dz-message-text">Drag and drop file</span>
-                                                    </div>
+                                                    </div> --}}
                                                 </div>
                                             </div>
                                             <div class="col-12">

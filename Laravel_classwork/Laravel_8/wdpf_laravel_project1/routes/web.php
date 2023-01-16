@@ -19,4 +19,5 @@ use Illuminate\Support\Facades\Route;
 // });
 // Route::get('/', [ProductController::class, 'index']);
 Route::get('/', [DashboardController::class, 'index'])->name('home');
+
 Route::resource('products',ProductController::class);

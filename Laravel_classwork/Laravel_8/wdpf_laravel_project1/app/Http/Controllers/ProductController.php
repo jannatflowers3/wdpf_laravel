@@ -28,10 +28,15 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function create()
-    // {
+    public function create()
+    {
+      
+
+
         
-    // }
+        $cats= Category::orderBy('cat_name','ASC')->get();
+        return view('backend.product.create',compact('cats'));
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -41,16 +46,30 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $product = new Product;
+      $validation =   $request->validate([
+            'product_name' => 'required',
+            'product_descriptions' => 'min:3|max:10',
+            'product_price' => 'required',
+            'product_category' => 'required',
+            'product_stock' => 'required',
+            
+        ]);
+      
+            $product = new Product;
         $product->product_name = $request->product_name;
         $product->product_descriptions = $request->product_descriptions;
         $product->product_price = $request->product_price;
         $product->product_stock = $request->product_stock;
         $product->product_category = $request->product_category;
         $product->product_img = $request->product_img;
+     
         $product->save();
-     return redirect('/products');
+            return redirect('/products')->with('msg', 'Product Added');
+            // echo "success";
+       
+      
+        
+    //  return redirect('/products');
         //or
         // return redirect()->back();
          

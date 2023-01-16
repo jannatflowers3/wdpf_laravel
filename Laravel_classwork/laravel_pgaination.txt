@@ -1,0 +1,17 @@
+1.
+ @############ vendor folde create  ############
+
+
+
+1.   php artisan vendor:publish --tag=laravel-pagination
+ 2,  pagination page  ar command  
+####################  {{$products->links('vendor.pagination.bootstrap-4') }} 
+
+
+ ###########################################
+dummy data seeding  php artisan db:seed
+
+ #########  page link  ###
+   {{url('/products')}}
+    Or {{route('products.create')}}
+        ######## route lista a route ar name and = controller name = page name
