@@ -1,5 +1,6 @@
  1. composer install/update
 2. env example k rename kore .env kore database connect korte hobe 
+          env dile a key generate 
 3. php artisan key:generate
 4.  php artisan migrate  ==database ar data migrate hobe
 5.  php artisan db:seed   == database golo all data chole asbe 

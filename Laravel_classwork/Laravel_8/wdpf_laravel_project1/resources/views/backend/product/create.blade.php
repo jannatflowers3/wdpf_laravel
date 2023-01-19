@@ -93,14 +93,15 @@
                                                         <input type="file" class="form-control" id="product_img" value="{{old('product_img')}}" name="product_img">
                                                     </div>
                                                 </div>
+
                                             </div>
                                             <div class="col-12">
-                                                <div class="upload-zone small bg-lighter my-2">
+                                                {{-- <div class="upload-zone small bg-lighter my-2">
                                                     <div class="dz-message">
                                                         <input type="file" class="dz-message">
                                                         <span class="dz-message-text">Drag and drop file</span>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                             <div class="col-12">
                                                 <button class="btn btn-primary" type="submit" ><em class="icon ni ni-plus"></em><span>Add New</span></button>

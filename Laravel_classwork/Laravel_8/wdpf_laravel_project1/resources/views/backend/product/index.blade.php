@@ -116,7 +116,8 @@
                                                         </div>
                                                              
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-sub">{{$product->product_img}}</span>
+                                                            {{-- <span class="tb-sub">{{'product_photos/'.$product->product_img}}</span> --}}
+                                                            <img src="{{'product_photos/'.$product->product_img}}" width="80px" alt="img"/>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
                                                             <div class="asterisk tb-asterisk">
@@ -131,7 +132,8 @@
                                                                         <div class="dropdown-menu dropdown-menu-end">
                                                                             <ul class="link-list-opt no-bdr">
                                                                                 <li><a href="#"><em class="icon ni ni-edit"></em><span>Edit Product</span></a></li>
-                                                                                <li><a href="#"><em class="icon ni ni-eye"></em><span>View Product</span></a></li>
+                                                                                <li><a href="{{route('products.show',$product->id)}}"><em class="icon ni ni-eye"></em><span>View Product</span></a></li>
+                                                                                {{-- <li><a href="{{route('products/'.$product->id)}}"><em class="icon ni ni-eye"></em><span>View Product</span></a></li> --}}
                                                                                 <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Product Orders</span></a></li>
                                                                                 <li><a href="#"><em class="icon ni ni-trash"></em><span>Remove Product</span></a></li>
                                                                             </ul>
