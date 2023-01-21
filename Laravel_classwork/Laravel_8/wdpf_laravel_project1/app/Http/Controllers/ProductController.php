@@ -96,7 +96,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        
+    
         return view("backend.product.single",compact('product'));
     }
 
@@ -108,7 +108,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        // echo "ami asi";
+        $cats= Category::orderBy('cat_name','ASC')->get();
+        return view('backend.product.edit', compact('product','cats'));
     }
 
     /**
@@ -120,7 +122,35 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        // echo "update";
+
+        $validation =   $request->validate([
+            'product_name' => 'required',
+            'product_descriptions' => 'min:3|max:10',
+            'product_price' => 'required',
+            'product_category' => 'required',
+            'product_stock' => 'required',
+            'product_img' =>'image|mimes:png,jpg,pdf |max:2048'
+            
+        ]);
+      
+        // $product = new Product;
+        $product->product_name = $request->product_name;
+        $product->product_descriptions = $request->product_descriptions;
+        $product->product_price = $request->product_price;
+        $product->product_stock = $request->product_stock;
+        $product->product_category = $request->product_category;
+        if($request->product_img){        
+          $imageName = time() . "." .
+          $request->product_img->extension();
+          $request->product_img->move(public_path('product_photos'), $imageName);
+          $product->product_img = $imageName;
+        }
+
+        $product->update();
+        return redirect('/products')->with('msg', 'Product Updated');
+      
+     
     }
 
     /**
@@ -131,6 +161,8 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        // echo $product->id;
+        $product->delete();
+        return redirect('/products')->with('msg', 'Product deleted');
     }
 }

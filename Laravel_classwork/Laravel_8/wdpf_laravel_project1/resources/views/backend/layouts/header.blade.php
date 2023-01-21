@@ -12,8 +12,8 @@
     <!-- Page Title  -->
     <title>Default Dashboard | DashLite Admin Template</title>
     <!-- StyleSheets  -->
-    <link rel="stylesheet" href="assests_template./assets/css/dashlite.css?ver=3.1.1">
-    <link id="skin-default" rel="stylesheet" href="assests_template./assets/css/theme.css?ver=3.1.1">
+    <link rel="stylesheet" href="/assests_template./assets/css/dashlite.css?ver=3.1.1">
+    <link id="skin-default" rel="stylesheet" href="/assests_template./assets/css/theme.css?ver=3.1.1">
 <style>
 
     svg.w-5,svg.h-5{

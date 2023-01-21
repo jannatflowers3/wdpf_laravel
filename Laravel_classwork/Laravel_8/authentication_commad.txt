@@ -1,0 +1,8 @@
+##### https://www.itsolutionstuff.com/post/laravel-8-authentication-using-jetstream-exampleexample.html
+  php artisan --version
+  1. composer require laravel/jetstream
+  2. php artisan jetstream:install livewire
+  3. npm install
+  4. npm run dev
+
+  5.composer require laravel/sanctum

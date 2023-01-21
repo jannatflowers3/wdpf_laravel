@@ -131,11 +131,20 @@
                                                                         <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                                         <div class="dropdown-menu dropdown-menu-end">
                                                                             <ul class="link-list-opt no-bdr">
-                                                                                <li><a href="#"><em class="icon ni ni-edit"></em><span>Edit Product</span></a></li>
+                                                                                <li><a href="{{route('products.edit',$product->id)}}"><em class="icon ni ni-edit"></em><span>Edit Product</span></a></li>
                                                                                 <li><a href="{{route('products.show',$product->id)}}"><em class="icon ni ni-eye"></em><span>View Product</span></a></li>
                                                                                 {{-- <li><a href="{{route('products/'.$product->id)}}"><em class="icon ni ni-eye"></em><span>View Product</span></a></li> --}}
                                                                                 <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Product Orders</span></a></li>
-                                                                                <li><a href="#"><em class="icon ni ni-trash"></em><span>Remove Product</span></a></li>
+                                                                                <li>
+                                                                                   
+                                                                                    <form method="post" onsubmit="return confirm('Are you sure you want to delete')" action="{{route('products.destroy',$product->id)}}" class="remove">
+                                                                                       {{ method_field('DELETE')}}
+
+                                                                                        @csrf
+                                                                                        <button type="submit" class="icon ni ni-trash btn btn-danger" >Remove</button>
+                                                                                
+                                                                                    </form> 
+                                                                                    </li>
                                                                             </ul>
                                                                         </div>
                                                                     </div>
