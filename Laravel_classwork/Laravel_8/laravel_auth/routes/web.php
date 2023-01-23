@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\backend\Logincontroller;
+use App\Http\Controllers\frontend\Homecontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+//  Frontend roures
+// Route::get('/', function () {
+//     return view('frontend.home');
+// });
+Route::get('/',[Homecontroller::class, 'index']);
+// Backend route
+Route::get('/admin',[Logincontroller::class, 'login']);
 
 Route::middleware([
     'auth:sanctum',

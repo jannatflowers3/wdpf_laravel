@@ -28,13 +28,16 @@ main pages a
 
 9. php artisan make:migration products
 10. php artisan migrate
-10 . php artisan route:list  routes all routing dekha jabe
+10 . php artisan route:list   ######### routes all routing dekha jabe
 11. php artisan migrate:refresh             == ager data r sathe new field add korbe = auto icnrements hole 
  unsigned hobe 1,2,3, serila onojai hobe
 12.  php artisan make:model productModel
 13 .= model folder ar modhe productmodel asbe =  php artisan make:model models/product
 
 
+############################
+controller resourceful ar jonno 
+php artisan make:controller CategoryController -r
 
 
 

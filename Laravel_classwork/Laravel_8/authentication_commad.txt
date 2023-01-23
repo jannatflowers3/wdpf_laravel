@@ -6,3 +6,31 @@
   4. npm run dev
 
   5.composer require laravel/sanctum
+
+composer create laravel/laravel laravelAuth
+
+ ################ login authentication
+
+https://www.codesolutionstuff.com/laravel-middleware-tutorial-with-example/
+   1.  $table->boolean('isAdmin')->nullable();
+#######  admin table a isAdmin field add korte hole ager data delete kore isAdmin field ta add hobe
+          php artisan migrate:refresh
+
+
+   1. composer create-project laravel/laravel laravel_auth
+   2. cd laravel_auth
+   3. composer require laravel/jetstream
+   4 . php artisan jetstream:install livewire
+   5. npm install
+   6. npm run dev
+   7. .env Database confiquaration
+    8. php artisan migrate
+
+    9.  
+	(app.blade.php, guest.blade.php) and remove @vite like this
+	 ##########  @vite(['resources/css/app.css', 'resources/js/app.js']) => Remove this and add following 
+       <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+	script src="{{ asset('js/app.js') }}" defer></script>
+  10. php artisan make:controller frontend/Homecontroller
+
+

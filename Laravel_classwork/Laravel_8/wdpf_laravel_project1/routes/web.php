@@ -1,7 +1,11 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Logincontroller;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShowAge;
+use App\Http\Middleware\AuthLogin;
+use App\Http\Middleware\CheckAge;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +21,20 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+// controller sara manually routing create kora jai
+// Route::get('/admin', function () {
+//     return view('auth/login');
+// });
+
 // Route::get('/', [ProductController::class, 'index']);
-Route::get('/', [DashboardController::class, 'index'])->name('home');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('home');
 
 Route::resource('products',ProductController::class);
+Route::middleware([CheckAge::class])->group(function () {
+    Route::get('showmyage', [ShowAge::class, 'index']);
+});
+
+// login route start
+Route::middleware([AuthLogin::class])->group(function () {
+    Route::post('/login', [Logincontroller::class,'login']);
+});
