@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Logincontroller;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Reportcontroller;
 use App\Http\Controllers\ShowAge;
 use App\Http\Middleware\AuthLogin;
 use App\Http\Middleware\CheckAge;
@@ -38,3 +39,11 @@ Route::middleware([CheckAge::class])->group(function () {
 Route::middleware([AuthLogin::class])->group(function () {
     Route::post('/login', [Logincontroller::class,'login']);
 });
+
+Route::get('/jobs', function () {
+    return view('jobs');
+});
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/reports', [Reportcontroller::class, 'Report1']);

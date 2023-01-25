@@ -32,5 +32,7 @@ https://www.codesolutionstuff.com/laravel-middleware-tutorial-with-example/
        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 	script src="{{ asset('js/app.js') }}" defer></script>
   10. php artisan make:controller frontend/Homecontroller
+   11. php artisan make:controller backend/Logincontroller
+   vendor/laravel/forify/confiq/fortify.php
 
 

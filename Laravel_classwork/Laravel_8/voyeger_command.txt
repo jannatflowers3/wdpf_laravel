@@ -1,0 +1,11 @@
+ ########## tutorial link ####     https://github.com/the-control-group/voyager
+
+ 1. composer create-project laravel/laravel laravel8_voyager
+ 2 . cd laravel8_voyager
+  2. composer require tcg/voyager
+  3. .env  confiqure
+ ######  ager all table remve ar jonno 
+#######  php artisan migrate:reset
+  5. OR Dummy data
+php artisan voyager:install --with-dummy
+ 
