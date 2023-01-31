@@ -1,0 +1,8 @@
+ composer install
+or composer update
+
+.env file connect 
+key generate
+php artisan key:generate
+php artisan migrate
+php artisan db:seed

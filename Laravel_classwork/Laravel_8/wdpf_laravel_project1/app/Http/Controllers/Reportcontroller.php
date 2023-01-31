@@ -48,7 +48,9 @@ class Reportcontroller extends Controller
 
         //   $data = DB::table('employees')->whereBetween('officeCode',[1,3]);
 
-          $data = DB::table('employees','offices')->whereRaw('employees.officeCode','offices.officeCode');
+          $data = DB::table('employees')->select('firstName','lastName');
+        $data->join('offices', 'offices.officeCode', '=', 'employees.officeCode');
+         
         $result = $data->get();
                 echo "<pre>";
         print_r($result);  

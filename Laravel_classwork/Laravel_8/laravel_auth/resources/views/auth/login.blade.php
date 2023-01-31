@@ -1,48 +1,61 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
-
-        <x-jet-validation-errors class="mb-4" />
-
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
-            </div>
-        @endif
-
-        <form method="POST" action="{{ route('login') }}">
+@extends('layouts.app')
+@section('title','Login Page')
+   
+@section('content')
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <form method="post" action="{{route('login')}}">
             @csrf
-
-            <div>
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+            <!-- Email input -->
+            <h1 class="p-5 mt-5">Login Form</h1>
+            
+         @if($errors->any())
+         <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)          
+                <li>{{$error}}</li>
+                @endforeach
+            </ul>
+         </div>
+         @endif
+            <div class="form-outline mb-4">
+              <input type="email" id="form2Example1" name="email" class="form-control" />
+              <label class="form-label" for="form2Example1" name="email">Email address</label>
             </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+          
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input type="password" id="form2Example2" name="password" class="form-control" />
+              <label class="form-label" for="form2Example2" name="password">Password</label>
             </div>
-
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-jet-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
+          
+          
+            <!-- Submit button -->
+            <button type="submit"  class="btn btn-primary btn-block mb-4">Sign in</button>
+          
+            <!-- Register buttons -->
+            <div class="text-center">
+              <p>Not a member? <a href="{{route('register')}}">Register</a></p>
+              <p>or sign up with:</p>
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-facebook-f"></i>
+              </button>
+          
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-google"></i>
+              </button>
+          
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-twitter"></i>
+              </button>
+          
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-github"></i>
+              </button>
             </div>
+          </form>
+    </div>
+</div>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
 
-                <x-jet-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+@endsection
