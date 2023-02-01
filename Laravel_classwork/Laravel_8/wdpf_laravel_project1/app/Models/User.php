@@ -40,6 +40,7 @@ class User extends Authenticatable
     ];
     public function phoneTable()
     {
-        return $this->hasOne('App\Models\Phone');
+        // return $this->hasOne('App\Models\Phone');
+        return $this->hasMany('App\Models\Phone');
     }
 }

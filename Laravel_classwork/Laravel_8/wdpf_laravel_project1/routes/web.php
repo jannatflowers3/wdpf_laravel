@@ -49,3 +49,4 @@ Route::get('/about', function () {
 });
 Route::get('/reports', [Reportcontroller::class, 'Report1']);
 Route::get('/users', [Usercontroller::class, 'index']);
+Route::get('/phoneData', [Usercontroller::class, 'phoneData']);
