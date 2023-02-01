@@ -10,7 +10,7 @@
   <body>
     <div class="container-scroller"> 
        @include('admin.nav')
-         {{-- user info start --}}
+       
        
             <div class="table-responsive usertable">
                 <h1 class="text-center">User Data</h1>

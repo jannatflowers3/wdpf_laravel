@@ -26,9 +26,15 @@ Route::get('/users', [AdminController::class, 'users']);
 Route::post('/reservation', [AdminController::class, 'reservation']);
 //  reservation route start
 Route::get('/viewreservation', [ReservationController::class, 'index']);
+
 // chefs route start
 Route::get('/chef', [ChefController::class, 'chef']);
 Route::post('/uploadchef', [ChefController::class, 'uploadchef']);
+Route::get('/chefslist', [ChefController::class, 'chefslist']);
+Route::get('/deletechef/{id}', [ChefController::class, 'deletechef']);
+Route::get('/eidtchef/{id}', [ChefController::class, 'eidtchef']);
+Route::post('/updatechef/{id}', [ChefController::class, 'updatechef']);
+
 // food route start
 Route::get('/foodmenu', [FoodController::class, 'foodmenu']);
 Route::post('/uploadfood', [FoodController::class, 'uploadfood']);
@@ -39,8 +45,9 @@ Route::post('/update/{id}', [FoodController::class, 'update']);
 
 Route::get('/deleteuser/{id}', [AdminController::class, 'deleteuser']);
 // Route::resource('/users', [AdminController::class]);
-
 Route::get('/redirects', [HomeController::class, 'redirects']);
+// addcart route start
+Route::post('/addcart/{id}', [HomeController::class, 'addcart']);
 
 Route::middleware([
     'auth:sanctum',

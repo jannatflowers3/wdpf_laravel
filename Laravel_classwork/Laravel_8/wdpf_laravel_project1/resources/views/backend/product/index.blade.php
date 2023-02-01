@@ -7,7 +7,6 @@
     <div class="alert alert-success">
      {{$msg}}
     </div>
- 
     @endif 
                                 <div class="nk-block-head nk-block-head-sm">
                                     <div class="nk-block-between">

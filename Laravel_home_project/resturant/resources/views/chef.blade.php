@@ -9,6 +9,9 @@
             </div>
         </div>
         <div class="row">
+            @foreach ($chefsall_datas as $chefsall_data)
+                
+           
             <div class="col-lg-4">
                 <div class="chef-item">
                     <div class="thumb">
@@ -18,15 +21,16 @@
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                         </ul>
-                        <img src="assets/images/chefs-01.jpg" alt="Chef #1">
+                        <img src="/chefImage/{{$chefsall_data->image}}" alt="Chef #1">
                     </div>
                     <div class="down-content">
-                        <h4>Randy Walker</h4>
-                        <span>Pastry Chef</span>
+                        <h4>{{$chefsall_data->name}}</h4>
+                        <span>{{$chefsall_data->speciality}}</span>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            @endforeach
+            {{-- <div class="col-lg-4">
                 <div class="chef-item">
                     <div class="thumb">
                         <div class="overlay"></div>
@@ -59,7 +63,7 @@
                         <span>Pancake Chef</span>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>

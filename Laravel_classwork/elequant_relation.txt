@@ -1,0 +1,5 @@
+  1.  php artisan make:model phone -mc
+   2. php artisan migrate
+         all data remove kore seed korar jonno
+     2. php artisan migrate:fresh --seed
+  3.  php artisan db:seed

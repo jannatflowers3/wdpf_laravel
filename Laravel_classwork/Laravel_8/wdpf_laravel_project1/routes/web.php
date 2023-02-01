@@ -5,6 +5,7 @@ use App\Http\Controllers\Logincontroller;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Reportcontroller;
 use App\Http\Controllers\ShowAge;
+use App\Http\Controllers\Usercontroller;
 use App\Http\Middleware\AuthLogin;
 use App\Http\Middleware\CheckAge;
 use Illuminate\Support\Facades\Route;
@@ -47,3 +48,4 @@ Route::get('/about', function () {
     return view('about');
 });
 Route::get('/reports', [Reportcontroller::class, 'Report1']);
+Route::get('/users', [Usercontroller::class, 'index']);

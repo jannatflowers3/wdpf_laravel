@@ -34,6 +34,13 @@
                         <div class="col-lg-12">
                             <h4>Table Reservation</h4>
                         </div>
+                           @if($msg = Session::get('msg'))
+                          <div class="alert alert-success">
+                          {{$msg}}
+                          </div>
+                      
+                          @endif 
+           
                         <div class="col-lg-6 col-sm-12">
                           <fieldset>
                             <input name="name" type="text" id="name" placeholder="Your Name*" required="">

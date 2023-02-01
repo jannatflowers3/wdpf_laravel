@@ -89,11 +89,22 @@
         <li class="nav-item menu-items">
           <a class="nav-link" href="{{url('/chef')}}">
             <span class="menu-icon">
-              <i class="mdi mdi-table-large"></i>
+              {{-- <i class="mdi mdi-table-large"></i> --}}
             </span>
-            <span class="menu-title">Chefs</span>
+            <span class="menu-title">Add Chefs</span>
           </a>
         </li>
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="{{url('/chefslist')}}">
+            <span class="menu-icon">
+              <i class="mdi mdi-table-large"></i>
+            </span>
+            <span class="menu-title"> Chefs List</span>
+          </a>
+        </li>
+      
+
+
         <li class="nav-item menu-items">
           <a class="nav-link" href="{{url('/viewreservation')}}">
             <span class="menu-icon">
