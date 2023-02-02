@@ -3,3 +3,8 @@
          all data remove kore seed korar jonno
      2. php artisan migrate:fresh --seed
   3.  php artisan db:seed
+
+php artisan make:model Post -mc
+model hobe
+  m == migration 
+  c = controller create hobe

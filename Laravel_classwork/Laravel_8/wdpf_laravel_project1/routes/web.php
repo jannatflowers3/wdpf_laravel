@@ -2,12 +2,14 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Logincontroller;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Reportcontroller;
 use App\Http\Controllers\ShowAge;
 use App\Http\Controllers\Usercontroller;
 use App\Http\Middleware\AuthLogin;
 use App\Http\Middleware\CheckAge;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -50,3 +52,5 @@ Route::get('/about', function () {
 Route::get('/reports', [Reportcontroller::class, 'Report1']);
 Route::get('/users', [Usercontroller::class, 'index']);
 Route::get('/phoneData', [Usercontroller::class, 'phoneData']);
+Route::get('/post', [PostController::class, 'index']);
+Route::get('/roles', [Usercontroller::class, 'roleAssign']);

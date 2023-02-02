@@ -21,8 +21,7 @@ class Reportcontroller extends Controller
         // jader office code 3 tader dekhaw
         // $data = DB::table('employees')->whereIn('officeCode',[1,2,3])->get();
         // wherein jader office code 1,2,3 tader dekhaw
-
-
+             
         //   $data = DB::table('employees')->whereIn('officeCode',[1,2,3])->where("jobTitle","Sales Rep")->get();
         //3  Jader office code 123 and jader jobtitle = sales rep
 

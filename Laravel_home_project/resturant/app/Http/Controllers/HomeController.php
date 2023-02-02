@@ -44,14 +44,28 @@ class HomeController extends Controller
             $cart->food_id = $foodid;
             $cart->quantity = $quantity;
             $cart->save();
-
             // dd($user_id);
-
             return redirect()->back();
         }
         else{
             return redirect('/login');
         }
+    }
+
+    public function showcart(Request $request, $id)
+    {
+        $count = AddCart::where('user_id', $id)->count();
+        $data2 = Addcart::select('*')->where('user_id', '=', $id)->get();
+        $joindatas = AddCart::where('user_id', $id)->join('food', 'add_carts.food_id', '=', 'food.id')->get();
+
+        return view('showcart',compact('count','joindatas','data2'));
+    }
+
+    public function remove($id)
+    {
+        $remove = AddCart::find($id);
+        $remove->delete();
+        return redirect()->back();
     }
 }
 

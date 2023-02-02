@@ -48,6 +48,8 @@ Route::get('/deleteuser/{id}', [AdminController::class, 'deleteuser']);
 Route::get('/redirects', [HomeController::class, 'redirects']);
 // addcart route start
 Route::post('/addcart/{id}', [HomeController::class, 'addcart']);
+Route::get('/showcart/{id}', [HomeController::class, 'showcart']);
+Route::get('/remove/{id}', [HomeController::class, 'remove']);
 
 Route::middleware([
     'auth:sanctum',

@@ -83,15 +83,18 @@ https://templatemo.com/tm-558-klassy-cafe
                             </li>
                             <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
                             <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li> 
-                            <li class="scroll-to-section"><a href="#reservation" style="background-color: pink">
-                                {{-- Cart --}}
-                                @auth
-                                {{$count}}
+                            <li class="scroll-to-section" style="background-color: pink;border-radius: 7px;
+                            padding: 0px 5px">
+                              @auth
+                              <a href="{{url('/showcart',Auth::user()->id)}}" >
+                                Cart [{{$count}}]
+
                                 @endauth
-                                 @guest
-                                cart[0]
+                                @guest
+                                    Cart [0]
                                 @endguest
-                            </a>
+
+                            </a>   
                         </li> 
                         
                              {{-- login registration --}}
