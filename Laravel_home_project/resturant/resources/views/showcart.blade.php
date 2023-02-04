@@ -32,6 +32,9 @@
         top: -80px;
         right: -100px;
      }
+     .orderbtn_hide{
+
+     }
     </style>
     </head>    
     <body>
@@ -143,7 +146,7 @@
                          
                     @endforeach
                     @foreach($data2 as $data2remove)
-                 <tr class="removedata">
+                 <tr class="" style="position: relative;top:-60px;right:-200px">
                     <td >
                         <a href="{{url('/remove',$data2remove->id)}}">Delete</a>
                       </td>
@@ -151,11 +154,33 @@
                     @endforeach
                 </tbody>         
               </table>
+              <div class="orderbtn mb-5 p-5">
+                  <button class="btn btn-primary">Order Now</button>
+              </div>
+              <div class="orderbtn_hide">
+                <div class="form-group">
+                    <label for="name">Name</label> 
+                           <input type="text" class="form-control text-white " id="name" name="name">           
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Phone</label> 
+                           <input type="text" class="form-control text-white " id="phone" name="phone">           
+                  </div>
+                  <div class="form-group">
+                    <label for="address">Address</label> 
+                          <input type="text" class="form-control text-white " id="address" name="address">           
+                  </div>
+                  <div class="form_button">
+                    <label for="address">Address</label> 
+                          <input type="text" class="form-control text-white " id="address" name="address">           
+                  </div>
+              </div>
         </div>
     </div>
  </div>
 </section>
-        
+    
+
     <!-- ***** Footer Start ***** -->
     <footer style="">
         <div class="container mt-5">

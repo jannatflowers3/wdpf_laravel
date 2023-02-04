@@ -14,28 +14,27 @@ class HomeController extends Controller
     {
         $datas = food::all();
         $chefsall_datas = FoodChef::all();
-        return view('home',compact('datas','chefsall_datas'));
+        return view('home', compact('datas', 'chefsall_datas'));
     }
     public function redirects()
-    { 
-        
+    {
+
         $datas = food::all();
         $chefsall_datas = FoodChef::all();
         $usertype = Auth::user()->usertype;
-        if($usertype == '1'){
+        if ($usertype == '1') {
             return view('admin.adminHome');
-        }
-        else{
-        // $chefsall_datas = FoodChef::all();
+        } else {
+            // $chefsall_datas = FoodChef::all();
             $user_id = Auth::id();
-            $count = AddCart::where('user_id',$user_id)->count();
-            return view('home',compact('datas','chefsall_datas','count'));
+            $count = AddCart::where('user_id', $user_id)->count();
+            return view('home', compact('datas', 'chefsall_datas', 'count'));
         }
     }
 
-    public function addcart( Request $request, $id)
+    public function addcart(Request $request, $id)
     {
-        if(Auth::id()){
+        if (Auth::id()) {
             $user_id = Auth::id();
             $foodid = $id;
             $quantity = $request->quantity;
@@ -46,8 +45,7 @@ class HomeController extends Controller
             $cart->save();
             // dd($user_id);
             return redirect()->back();
-        }
-        else{
+        } else {
             return redirect('/login');
         }
     }
@@ -58,7 +56,7 @@ class HomeController extends Controller
         $data2 = Addcart::select('*')->where('user_id', '=', $id)->get();
         $joindatas = AddCart::where('user_id', $id)->join('food', 'add_carts.food_id', '=', 'food.id')->get();
 
-        return view('showcart',compact('count','joindatas','data2'));
+        return view('showcart', compact('count', 'joindatas', 'data2'));
     }
 
     public function remove($id)

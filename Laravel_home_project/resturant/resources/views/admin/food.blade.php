@@ -19,8 +19,7 @@
   
         <div class="form-group">
             <label for="title">Title</label> 
-                   <input type="text" class="form-control text-white " id="title" name="title">
-             
+                   <input type="text" class="form-control text-white " id="title" name="title">           
           </div>
   
     <div class="form-group">

@@ -1,0 +1,41 @@
+https://www.itsolutionstuff.com/post/laravel-8-user-roles-and-permissions-tutorialexample.html
+
+ 1. composer create-project laravellaravel user_role_permission
+ 2. cd user_role_prmission
+ 3. ENV cofiquaration With Database
+ 4. composer require spatie/laravel-permission
+ 5. composer require laravelcollective/html
+
+6 . >php artisan make:model Product -cr
+  model conrtoller resurceful hobe
+php artisan make:model Product -mcr 
+model,controller ,migration resourceful hobe
+ 7 .composer require laravel/ui
+
+ 8 . php artisan db:seed --class=CreateAdminUserSeeder
+
+database ar kono induvidually seed korte haile 
+
+ boostrap ar css korle add korte chaile 
+npx mix
+
+
+
+<li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+

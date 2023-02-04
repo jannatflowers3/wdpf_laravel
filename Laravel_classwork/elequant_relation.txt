@@ -8,3 +8,7 @@ php artisan make:model Post -mc
 model hobe
   m == migration 
   c = controller create hobe
+
+database al all data refresh hoiye seed hobe
+
+ php artisan migrate:fresh --seed
