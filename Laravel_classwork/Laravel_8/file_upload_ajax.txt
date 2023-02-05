@@ -1,0 +1,33 @@
+ 1 . 
+ 1. composer create-project laravel/laravel laravel8_fileupload_ajax
+
+
+2. php artisan make:model Image -mc
+#############  migration  page  ############
+ Schema::create('images', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
+        });
+
+ 3. php artisan migrate
+
+
+ controller ikmage
+ public function store(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        
+        $imageName = time().'.'.$request->image->extension();  
+         
+        // $request->image->move(public_path('images'), $imageName);
+        $request->image->storeAs('images', $imageName);
+        Image::create(['name' => $imageName]);
+        
+        return response()->json('Image uploaded successfully');
+    }
+
+##############  storage folder shortcut korar jonno #################
+php artisan storage:link

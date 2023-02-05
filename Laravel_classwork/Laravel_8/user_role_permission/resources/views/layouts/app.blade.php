@@ -37,9 +37,14 @@
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                         @else
+                        <?php $roleid =  Auth::user()->roles->first()->id ?>
+                        @if ($roleid ==1)
                             <li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>
                             <li><a class="nav-link" href="{{ route('roles.index') }}">Manage Role</a></li>
+                            @endif
+                            @if ($roleid ==1 || $roleid == 2)
                             <li><a class="nav-link" href="{{ route('products.index') }}">Manage Product</a></li>
+                          @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -62,7 +67,6 @@
                 </div>
             </div>
         </nav>
-
 
         <main class="py-4">
             <div class="container">

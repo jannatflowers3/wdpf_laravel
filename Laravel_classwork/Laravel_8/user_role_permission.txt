@@ -39,3 +39,12 @@ npx mix
                                 </div>
                             </li>
 
+  
+ #######pagination ar jonno #########
+
+   php artisan vendor:publish --tag=laravel-pagination
+
+  index page a 
+{!! $roles->links('vendor.pagination.bootstrap-4') !!}
+  @############  controller a pagination  k call korte hobe  ############
+$roles = Role::orderBy('id','DESC')->paginate(1);
