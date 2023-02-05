@@ -17,11 +17,13 @@
     <link rel="stylesheet" href="assets/css/templatemo-klassy-cafe.css">
     <link rel="stylesheet" href="assets/css/owl-carousel.css">
     <link rel="stylesheet" href="assets/css/lightbox.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <style>
       .showcart{
         /* z-index: 999; */
-       position: relative;
-        top:70px;
+       /* position: relative;
+        top:70px; */
+        margin-top: 120px;
              
       }
       .footer{
@@ -48,8 +50,8 @@
     </div>  
     <!-- ***** Preloader End ***** -->
     <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky" style="position: static">
-        <div class="container">
+    <header class="header-area header-sticky" style="position: relative" >
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
@@ -74,7 +76,7 @@
                             </li>
                             <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
                             <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li> 
-                            <li class="scroll-to-section" style="background-color: pink;border-radius: 7px;
+                            {{-- <li class="scroll-to-section" style="background-color: pink;border-radius: 7px;
                             padding: 0px 5px">
                               @auth
                               <a href="{{url('/showcart',Auth::user()->id)}}" >
@@ -86,7 +88,7 @@
                                 @endguest
 
                             </a>   
-                        </li>            
+                        </li>             --}}
                              {{-- login registration --}}
                              <li>
                                 @if (Route::has('login'))
@@ -118,64 +120,82 @@
 <section class="showcart ">
  <div class="container">
     <div class="row justify-content-center">
-        <div class="col-lg-10">
+        <div class="col-lg-12">
             <table class="table table-bordered justify-content-center">
                 <thead>
                   <tr class="table-success">
                     <th>  Food Title </th>
-                    <th>  Image </th>
+                    {{-- <th>  Image </th> --}}
                     <th> Price </th>
                     <th> Quantity </th>
                     <th> Action </th>
                   </tr>
                 </thead>
                  <tbody>
+                    <form method="post" action="{{url('/orderConfirm')}}">
+                        @csrf
                     @foreach ($joindatas as $joindata)
                    
-                    <tr>
-                        <td>{{$joindata->title}}</td>
-                        <td>
-                         <img src="/foodimage/{{$joindata->image}}" alt="foodimg" width="80px">
+                    <tr> 
+                        <td style="width: 40%">
+                            <input type="text" name="foodname[]" value="{{$joindata->title}}" hidden="">
+                            {{$joindata->title}}
                         </td>
-                        <td>{{$joindata->price}}</td>
-                        <td>{{$joindata->quantity}}</td>
+                        {{-- <td style="width: 40%;text-align:center">
+                         <img src="/foodimage/{{$joindata->image}}" alt="foodimg" width="80px">
+                        </td> --}}
+                        <td style="width: 5%">
+                            <input type="text" name="price[]" value="{{$joindata->price}}" hidden="">
+
+                            {{$joindata->price}}
+                        </td>
+                        <td style="width: 5%">
+                            <input type="text" name="quantity[]" value=" {{$joindata->quantity}}" hidden="">
+
+                            {{$joindata->quantity}}
+                        </td>
                         {{-- <td>
                            
                         </td> --}}
-                    </tr>
+                 
                          
                     @endforeach
                     @foreach($data2 as $data2remove)
-                 <tr class="" style="position: relative;top:-60px;right:-200px">
-                    <td >
+                 <tr>
+                    <td style="width: 10%">
                         <a href="{{url('/remove',$data2remove->id)}}">Delete</a>
                       </td>
+                    </tr>
                  </tr>
                     @endforeach
                 </tbody>         
               </table>
-              <div class="orderbtn mb-5 p-5">
-                  <button class="btn btn-primary">Order Now</button>
+              <div class="orderbtn mb-2 p-5 text-center">
+                  <button class="btn btn-primary" id="order" type="submit" style="color: black">Order Now</button>
               </div>
-              <div class="orderbtn_hide">
-                <div class="form-group">
-                    <label for="name">Name</label> 
-                           <input type="text" class="form-control text-white " id="name" name="name">           
-                  </div>
-                  <div class="form-group">
-                    <label for="phone">Phone</label> 
-                           <input type="text" class="form-control text-white " id="phone" name="phone">           
-                  </div>
-                  <div class="form-group">
-                    <label for="address">Address</label> 
-                          <input type="text" class="form-control text-white " id="address" name="address">           
-                  </div>
-                  <div class="form_button">
-                    <label for="address">Address</label> 
-                          <input type="text" class="form-control text-white " id="address" name="address">           
-                  </div>
+              <div class="orderbtn_hide appear"  style="display: none">
+                <div class="orderform " style="width: 40%; margin:0px auto">
+                    <div class="form-group">
+                        <label for="name">Name</label> 
+                               <input type="text" class="form-control text-white " id="name" name="name">           
+                      </div>
+                      <div class="form-group">
+                        <label for="phone">Phone</label> 
+                               <input type="text" class="form-control text-white " id="phone" name="phone">           
+                      </div>
+                      <div class="form-group">
+                        <label for="address">Address</label> 
+                              <input type="text" class="form-control text-white " id="address" name="address">           
+                      </div>
+                      <div class="form_button">
+                        <label for="address">Address</label> 
+                              <input type="text" class="form-control text-white " id="address" name="address">           
+                      </div>
+                      <input style="text-align: center;color:black" class="confirmorder  bg-red btn btn-success" type="submit" value="Order Confirm "/>
+                      <button style="text-align: center;color:black" class="close btn btn-success" type="submit">Close </button>
               </div>
         </div>
+    </form>
     </div>
  </div>
 </section>
@@ -210,10 +230,10 @@
             </div>
         </div>
     </footer>
-
+ 
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
-
+    {{-- <script src="jquery-3.6.1.min.js"></script> --}}
     <!-- Bootstrap -->
     <script src="assets/js/popper.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -229,7 +249,7 @@
     <script src="assets/js/slick.js"></script> 
     <script src="assets/js/lightbox.js"></script> 
     <script src="assets/js/isotope.js"></script> 
-    
+
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
     <script>
@@ -248,6 +268,15 @@
             });
         });
 
+    </script>
+    {{-- order script  --}}
+    <script type="text/javascript">
+          $(#order).click(function(){
+            $(.appear).show()
+          }) ;
+          $(.close).click(function(){
+            $(.appear).hide()
+          }) ;
     </script>
   </body>
 </html>

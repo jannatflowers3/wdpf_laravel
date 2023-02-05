@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Food;
 use App\Models\FoodChef;
+use App\Models\Order;
 
 class HomeController extends Controller
 {
@@ -64,6 +65,14 @@ class HomeController extends Controller
         $remove = AddCart::find($id);
         $remove->delete();
         return redirect()->back();
+    }
+
+    public function orderConfirm(Request $request)
+    {
+        foreach($request->foodname as $key=>$foodname){
+            $data = new Order;
+
+        }
     }
 }
 

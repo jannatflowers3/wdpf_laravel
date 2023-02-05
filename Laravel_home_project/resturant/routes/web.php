@@ -50,6 +50,8 @@ Route::get('/redirects', [HomeController::class, 'redirects']);
 Route::post('/addcart/{id}', [HomeController::class, 'addcart']);
 Route::get('/showcart/{id}', [HomeController::class, 'showcart']);
 Route::get('/remove/{id}', [HomeController::class, 'remove']);
+// orderConfirm route
+Route::get('/orderConfirm', [HomeController::class, 'orderConfirm']);
 
 Route::middleware([
     'auth:sanctum',
