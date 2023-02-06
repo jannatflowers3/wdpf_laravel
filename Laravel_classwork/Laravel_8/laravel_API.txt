@@ -1,0 +1,80 @@
+ 1.  laravel_project1
+
+
+
+ 1. php artisan make:controller Api/DogsController --api
+ 2 . php artisan make:model Dog --migration
+migration table a 
+Schema::create('dogs', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('color');
+            $table->timestamps();
+        });
+ 3. php artisan migrate
+
+ 	4 . Route::apiResource('dogs', DogsController::class,);
+	// data access ar jonno api/dogs
+
+############# post man  a korte chaile  $##########
+http://127.0.0.1:8000/api/dogs  ###### url a dekha jabe
+
+$############  method get dile all data dekhabe  ############
+################ urel post dile data insert kora jabe ##############
+
+   params ar key k ki ki data dibo tar name r tar value dite hobe ######
+
+ protected $fillable = ['name', 'color'];
+ name r color key isabe dite hobe
+ header = key = X-XSRF-TOKEN  valur ={{xsrf-token}}
+
+##########  ak ar odik data insert dite chaile  ##########
+      #        header  ar=  key = Accept    == value = application/json 
+dite hobe 
+############ update ar jonno put dite hobe  ########
+ ############ controller ###############
+ public function update(Request $request, $id)
+    {
+        $product = Product::findOrFail($id);
+        $input = $request->all();
+        return $product->update($input);
+    }
+
+   ###########  postman a url a PUT  diye link update     ############
+params a j kono data field ar name and value dite hobe
+ key = product_price value = 545
+ header = key = X-XSRF-TOKEN  valur ={{xsrf-token}}
+ key = Accept    == value = application/json 
+ ############# ai doita dite hbe############## 
+############### delete  ###########
+  url a method  delete dite url ar sathe id dite hobe 
+
+   http://127.0.0.1:8000/api/products/10 
+############# controller a ##########
+ $product = Product::findOrFail($id);
+        return $product->delete($id);
+
+taholei delete hobe 
+
+http://127.0.0.1:8000/api/products/1
+url a method put dite hobe
+ params a key = product_price  edit kore j value ta dite chaibo oita dite hbe 
+
+ return response()->json(['msg' => 'Successfully Deleted']);
+delete hole data delete dekhabe
+https://www.itsolutionstuff.com/post/laravel-9-rest-api-with-passport-authentication-tutorialexample.html
+############### restful api 
+	php artisan make:controller Api/ProductController --api
+
+
+
+
+
+
+
+
+######################## Laravel Testing ###############
+  1. php artisan make:test BasicTest
+  2. .\vendor\bin\phpunit
+
+

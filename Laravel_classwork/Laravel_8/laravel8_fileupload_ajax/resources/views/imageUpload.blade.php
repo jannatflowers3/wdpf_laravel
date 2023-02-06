@@ -38,7 +38,8 @@
         
         </form>
          @foreach ($images as $image)
-          <img src="{{storage_path()}}" alt="">
+          <img src="{{asset('storage'). '/'. $image->name}}" alt="uploadimg" width="80px">
+          @endforeach
       </div>
     </div>
 </div>
