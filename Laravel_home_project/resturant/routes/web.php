@@ -24,6 +24,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/users', [AdminController::class, 'users']);
 Route::post('/reservation', [AdminController::class, 'reservation']);
+Route::get('/orderlists', [AdminController::class, 'orderlists']);
+Route::get('/searchOrder', [AdminController::class, 'searchOrder']);
+
 //  reservation route start
 Route::get('/viewreservation', [ReservationController::class, 'index']);
 
@@ -51,7 +54,7 @@ Route::post('/addcart/{id}', [HomeController::class, 'addcart']);
 Route::get('/showcart/{id}', [HomeController::class, 'showcart']);
 Route::get('/remove/{id}', [HomeController::class, 'remove']);
 // orderConfirm route
-Route::get('/orderConfirm', [HomeController::class, 'orderConfirm']);
+Route::post('/orderConfirm', [HomeController::class, 'orderConfirm']);
 
 Route::middleware([
     'auth:sanctum',

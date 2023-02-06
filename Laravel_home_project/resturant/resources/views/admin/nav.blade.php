@@ -102,9 +102,16 @@
             <span class="menu-title"> Chefs List</span>
           </a>
         </li>
-      
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="{{url('/orderlists')}}">
+            <span class="menu-icon">
+              <i class="mdi mdi-table-large"></i>
+            </span>
+            <span class="menu-title"> Order List</span>
+          </a>
+        </li>
 
-
+        
         <li class="nav-item menu-items">
           <a class="nav-link" href="{{url('/viewreservation')}}">
             <span class="menu-icon">

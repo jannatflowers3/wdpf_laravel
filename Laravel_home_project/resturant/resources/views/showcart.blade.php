@@ -20,11 +20,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <style>
       .showcart{
-        /* z-index: 999; */
-       /* position: relative;
-        top:70px; */
-        margin-top: 120px;
-             
+        margin-top: 120px;      
       }
       .footer{
         padding: 0px 0px;
@@ -34,7 +30,16 @@
         top: -80px;
         right: -100px;
      }
-     .orderbtn_hide{
+     .closebutton{
+        background-color: red!important
+
+     }
+     .confirmorder{
+        background-color: #28a745!important
+     }
+     .confirmorder:hover{
+        background-color: none;
+        border:1px solid #28a745;
 
      }
     </style>
@@ -121,6 +126,8 @@
  <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-12">
+            <form method="post" action="{{url('/orderConfirm')}}">
+                @csrf
             <table class="table table-bordered justify-content-center">
                 <thead>
                   <tr class="table-success">
@@ -132,8 +139,7 @@
                   </tr>
                 </thead>
                  <tbody>
-                    <form method="post" action="{{url('/orderConfirm')}}">
-                        @csrf
+                  
                     @foreach ($joindatas as $joindata)
                    
                     <tr> 
@@ -173,29 +179,25 @@
               <div class="orderbtn mb-2 p-5 text-center">
                   <button class="btn btn-primary" id="order" type="submit" style="color: black">Order Now</button>
               </div>
-              <div class="orderbtn_hide appear"  style="display: none">
-                <div class="orderform " style="width: 40%; margin:0px auto">
+              <div class="orderbtn_hide" id="appear"  style="display: none">
+                {{-- <div class="orderform " style="width: 40%; margin:0px auto"> --}}
                     <div class="form-group">
                         <label for="name">Name</label> 
-                               <input type="text" class="form-control text-white " id="name" name="name">           
+                          <input type="text" class="form-control text-black " id="name" name="name">           
                       </div>
                       <div class="form-group">
                         <label for="phone">Phone</label> 
-                               <input type="text" class="form-control text-white " id="phone" name="phone">           
+                             <input type="number" class="form-control text-black " id="phone" name="phone">           
                       </div>
                       <div class="form-group">
                         <label for="address">Address</label> 
-                              <input type="text" class="form-control text-white " id="address" name="address">           
-                      </div>
-                      <div class="form_button">
-                        <label for="address">Address</label> 
-                              <input type="text" class="form-control text-white " id="address" name="address">           
-                      </div>
-                      <input style="text-align: center;color:black" class="confirmorder  bg-red btn btn-success" type="submit" value="Order Confirm "/>
-                      <button style="text-align: center;color:black" class="close btn btn-success" type="submit">Close </button>
-              </div>
+                              <input type="text" class="form-control text-black " id="address" name="address">           
+                      </div> 
+                      <button class=" btn btn-success confirmorder" type="submit">Order Confirm </button>
+                      <button  id="close"  class=" btn btn-danger closebutton" type="submit">Close </button>
+             </div>
+            </form>
         </div>
-    </form>
     </div>
  </div>
 </section>
@@ -232,8 +234,8 @@
     </footer>
  
     <!-- jQuery -->
-    <script src="assets/js/jquery-2.1.0.min.js"></script>
-    {{-- <script src="jquery-3.6.1.min.js"></script> --}}
+    {{-- <script src="assets/js/jquery-2.1.0.min.js"></script> --}}
+    <script src="jquery-3.6.1.min.js"></script>
     <!-- Bootstrap -->
     <script src="assets/js/popper.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -271,11 +273,11 @@
     </script>
     {{-- order script  --}}
     <script type="text/javascript">
-          $(#order).click(function(){
-            $(.appear).show()
+          $("#order").click(function(){
+            $('#appear').show()
           }) ;
-          $(.close).click(function(){
-            $(.appear).hide()
+          $('#close').click(function(){
+            $('#appear').hide()
           }) ;
     </script>
   </body>
