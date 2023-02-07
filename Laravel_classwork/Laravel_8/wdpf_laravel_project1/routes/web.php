@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Logincontroller;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Reportcontroller;
@@ -54,3 +55,8 @@ Route::get('/users', [Usercontroller::class, 'index']);
 Route::get('/phoneData', [Usercontroller::class, 'phoneData']);
 Route::get('/post', [PostController::class, 'index']);
 Route::get('/roles', [Usercontroller::class, 'roleAssign']);
+
+Route::get('/send_mail', [MailController::class, 'index']);
+Route::get('/contactform', [MailController::class, 'contactform']);
+Route::post('/fdf', [MailController::class, 'MessageSend'])->name('sendMsg');
+
