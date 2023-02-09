@@ -47,8 +47,9 @@ public function deleteuser($id)
     public function searchOrder(Request $request)
     {
           $search = $request->searchorder;
-          $orders = Order::where('foodname','Like','%'.$search.'%')->orWhere('quantity','Like','%'.$search.'%')->get();
+          $orders = Order::where('foodname','Like','%'.$search.'%')->orWhere
+          ('quantity','Like','%'.$search.'%')->orWhere('price','Like','%'.$search.'%')->get();
           return view('admin.orderlist',compact('orders'));
-    
+        
     }
 }
