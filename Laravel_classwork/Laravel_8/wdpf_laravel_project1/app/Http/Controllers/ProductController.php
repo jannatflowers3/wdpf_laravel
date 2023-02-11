@@ -15,13 +15,11 @@ class ProductController extends Controller
      */
     public function index()
     {
-                 $products = Product::latest()->paginate(10);
-
-               
+     $products = Product::latest()->paginate(10);
         $cats= Category::orderBy('cat_name','ASC')->get();
         // $data['products'] = Product::orderBy('id','DESC')->get();
     return view("backend.product.index",compact('products','cats'));
-    
+
     // echo "<pre>";
     //     print_r($data);
     }
@@ -32,10 +30,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-      
 
-
-        
         $cats= Category::orderBy('cat_name','ASC')->get();
         return view('backend.product.create',compact('cats'));
     }
@@ -55,20 +50,20 @@ class ProductController extends Controller
             'product_category' => 'required',
             'product_stock' => 'required',
             'product_img' =>'image|mimes:png,jpg,pdf |max:2048'
-            
+
         ]);
-      
+
         $product = new Product;
         $product->product_name = $request->product_name;
         $product->product_descriptions = $request->product_descriptions;
         $product->product_price = $request->product_price;
         $product->product_stock = $request->product_stock;
         $product->product_category = $request->product_category;
-        if($request->product_img){        
+        if($request->product_img){
           $imageName = time() . "." .
           $request->product_img->extension();
           $request->product_img->move(public_path('product_photos'), $imageName);
-        // ==public folder a img upload hobe 
+        // ==public folder a img upload hobe
         //   $request->product_img->storeAs('images' ,$imageName);
             // storage= app= auto akta images folder create hoiye (img folder )a img golo add hobe
           $product->product_img = $imageName;
@@ -76,18 +71,18 @@ class ProductController extends Controller
         else{
             $product->product_img = "";
         }
-        // 
-     
+        //
+
         $product->save();
             return redirect('/products')->with('msg', 'Product Added');
             // echo "success";
-       
-      
-        
+
+
+
     //  return redirect('/products');
         //or
         // return redirect()->back();
-         
+
     }
 
     /**
@@ -98,7 +93,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-    
+
         return view("backend.product.single",compact('product'));
     }
 
@@ -133,16 +128,16 @@ class ProductController extends Controller
             'product_category' => 'required',
             'product_stock' => 'required',
             'product_img' =>'image|mimes:png,jpg,pdf |max:2048'
-            
+
         ]);
-      
+
         // $product = new Product;
         $product->product_name = $request->product_name;
         $product->product_descriptions = $request->product_descriptions;
         $product->product_price = $request->product_price;
         $product->product_stock = $request->product_stock;
         $product->product_category = $request->product_category;
-        if($request->product_img){        
+        if($request->product_img){
           $imageName = time() . "." .
           $request->product_img->extension();
           $request->product_img->move(public_path('product_photos'), $imageName);
@@ -151,8 +146,8 @@ class ProductController extends Controller
 
         $product->update();
         return redirect('/products')->with('msg', 'Product Updated');
-      
-     
+
+
     }
 
     /**

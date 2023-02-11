@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="">
     <!-- Primary Navigation Menu -->
     <div class="">
         <div class="flex justify-between">
@@ -90,9 +90,9 @@
                             @endif
                         </x-slot>
 
-                        <x-slot name="content">
+                        <x-slot name="content" >
                             <!-- Account Management -->
-                            <div class="block px-4 py-2 text-xs text-gray-400">
+                            <div class="block  text-xs text-gray-400">
                                 {{ __('Manage Account') }}
                             </div>
 
