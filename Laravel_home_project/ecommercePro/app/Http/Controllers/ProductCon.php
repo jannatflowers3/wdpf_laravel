@@ -30,7 +30,7 @@ class ProductCon extends Controller
         $add_product->image = $imageName;
     }
     else{
-        $product->p_image = "";
+        $add_product->p_image = "";
     }
        $add_product->save();
        return redirect()->back()->with('message','Product Added Successfully');
@@ -62,7 +62,7 @@ class ProductCon extends Controller
     //  update product
     public function update_product( Request $request,$id)
     {
-        $update_product = new Product;
+        $update_product = Product::find($id);
         $update_product->title = $request->p_title;
         $update_product->description = $request->p_des;
         $update_product->price = $request->p_price;
@@ -74,10 +74,9 @@ class ProductCon extends Controller
          $imageName = time().'.'. $request->p_image->extension();
          // $request->p_image->storeAs('images' ,$imageName);
          $request->p_image->move(public_path('product_photos'),$imageName);
-         $editupdate_product_product->image = $imageName;
+         $update_product->image = $imageName;
      }
-
         $update_product->update();
-        return redirect('/productList')->back()->with('message','update Added Successfully');
+        return redirect('/productList')->with('message','Update Product Successfully');
     }
 }

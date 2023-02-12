@@ -1,2 +1,15 @@
   https://www.itsolutionstuff.com/post/laravel-9-mail-laravel-9-send-email-tutorialexample.html
  ############### laravel mailing #############
+
+################# 1. .ev file correction ##############
+    MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=465
+MAIL_USERNAME=jannatflowers3@gmail.com
+MAIL_PASSWORD=200554321
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=jannatflowers3@gmail.com
+MAIL_FROM_NAME="${APP_NAME}
+
+
+ php artisan make:mail DemoMail

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\DogsController;
+use App\Http\Controllers\Api\SearchController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Logincontroller;
 use App\Http\Controllers\MailController;
@@ -34,7 +36,9 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', [ProductController::class, 'index']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('home');
 
-Route::resource('products',ProductController::class);
+
+// Route::resource('products',ProductController::class);
+Route::Apiresource('products',DogsController::class);
 Route::middleware([CheckAge::class])->group(function () {
     Route::get('showmyage', [ShowAge::class, 'index']);
 });
@@ -60,3 +64,5 @@ Route::get('/send_mail', [MailController::class, 'index']);
 Route::get('/contactform', [MailController::class, 'contactform']);
 Route::post('/fdf', [MailController::class, 'MessageSend'])->name('sendMsg');
 
+// Vue Search Route
+Route::get('/search',[SearchController::class,'search']);

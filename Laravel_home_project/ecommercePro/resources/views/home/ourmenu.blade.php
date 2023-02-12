@@ -351,6 +351,9 @@
       </h2>
    </div>
    <div class="row">
+    @foreach ($products as $product)
+        
+   
       <div class="col-sm-6 col-md-4 col-lg-4">
          <div class="box  wow zoomIn"  data-wow-delay="0.2s" >
             <div class="option_container">
@@ -364,11 +367,11 @@
                </div>
             </div>
             <div class="img-box">
-               <img src="home_template/img/p1.png" alt="">
+               <img src="home_template/img/2.webp" alt="">
             </div>
             <div class="detail-box">
                <h5>
-                  Men's Shirt
+                  {{$product->title}}
                </h5>
                <h6>
                   $75
@@ -376,7 +379,8 @@
             </div>
          </div>
       </div>
-      <div class="col-sm-6 col-md-4 col-lg-4">
+      @endforeach
+      {{-- <div class="col-sm-6 col-md-4 col-lg-4">
          <div class="box">
             <div class="option_container">
                <div class="options">
@@ -650,7 +654,7 @@
                </h6>
             </div>
          </div>
-      </div>
+      </div> --}}
    </div>
    <div class="btn-box">
       <a href="">
