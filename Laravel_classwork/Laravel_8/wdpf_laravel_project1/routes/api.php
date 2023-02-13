@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\DogsController;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\SearchController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,4 @@ Route::apiResource('dogs', DogsController::class,);
 Route::resource('products', ProductController::class,);
 
 // data access ar jonno api/dogs
+Route::post('/search',[SearchController::class,'search']);

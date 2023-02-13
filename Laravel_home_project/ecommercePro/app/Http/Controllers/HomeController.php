@@ -11,7 +11,7 @@ class HomeController extends Controller
 
      public function index()
      {
-      $products = Product::all();
+      $products = Product::paginate(3);
         return view('home.userpage',compact('products'));
      }
     public function redirect()
@@ -21,8 +21,16 @@ class HomeController extends Controller
         return view('admin.home');
       }
       else{
-        return view('home.userpage');
+        // return view('home.userpage');
+        $products = Product::paginate(3);
+        return view('home.userpage',compact('products'));
       }
+    }
+
+    public function product_details($id)
+    { 
+       $product = Product::find($id);
+      return view('home.menu_details',compact('product'));
     }
 
 

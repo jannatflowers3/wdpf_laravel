@@ -48,6 +48,6 @@ Route::get('/delete_product/{id}',[ProductCon::class,'delete_product']);
 Route::get('/edit_product/{id}',[ProductCon::class,'edit_product']);
 Route::post('/update_product/{id}',[ProductCon::class,'update_product']);
 
-
-
+// menu router link
+Route::get('/product_details/{id}',[HomeController::class,'product_details']);
 
