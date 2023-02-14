@@ -15,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return Product::all();
+        return Product::orderBy('id','desc')->get();
     }
 
     /**
@@ -27,16 +27,19 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        $validation =   $request->validate([
+        
+        
+      $request->validate([
             'product_name' => 'required',
             'product_descriptions' => 'min:3|max:10',
             'product_price' => 'required',
             'product_category' => 'required',
             'product_stock' => 'required',
-            'product_img' =>'image|mimes:png,jpg,pdf |max:2048'
+            // 'product_img' =>'image|mimes:png,jpg,pdf |max:2048'
             
         ]);
-       return  Product::create($input);
+       Product::create($input);
+       return "Inserted";
 
     }
 
@@ -62,7 +65,8 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $input = $request->all();
-        return $product->update($input);
+         $product->update($input);
+         return 'success'
     }
 
     /**

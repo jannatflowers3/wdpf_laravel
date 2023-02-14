@@ -25,7 +25,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     Route::apiResource('dogs', 'DogsController');
 //    });
 Route::apiResource('dogs', DogsController::class,);
-Route::resource('products', ProductController::class,);
+// Route::resource('products', ProductController::class,);
+Route::apiResource('products', ProductController::class,);
 
 // data access ar jonno api/dogs
 Route::post('/search',[SearchController::class,'search']);
