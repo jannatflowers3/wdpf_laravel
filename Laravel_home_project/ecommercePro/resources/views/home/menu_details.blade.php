@@ -3,6 +3,11 @@
 
 <head>
  @include('home.style')
+ <style>
+    .text_color{
+        color: #000;
+    }
+ </style>
 </head>
 
 <body>
@@ -53,29 +58,30 @@
     </nav>
 
     <div class="container-xxl py-5 bg-dark hero-header mb-5">
-        
-        <h2>Menu Details</h2>
+
     </div>
 </div>
 
-<h1> Menu Details</h1>
+
 
 <!-- Menu section -->
 <section class="product_section layout_padding">
     <div class="container">
         <div class="heading_container heading_center text-center">
             <h2>
-                Our <span>Menu</span>
+                Menu <span>Details</span>
             </h2>
         </div>
         <div class="row">
-            @foreach ($product as $products)
+            <div class="col-lg-2">
+            </div>
+            {{-- @foreach ($product as $products) --}}
                 <div class="col-sm-6 col-md-4 col-lg-4">
 
                     <div class="box  wow zoomIn" data-wow-delay="0.2s">
                         <div class="option_container">
                             <div class="options">
-                                <a href="{{url('/product_details',$products->id)}}" class="option1">
+                                <a href="{{url('/product_details',$product->id)}}" class="option1">
                                     {{-- {{ $product->title }} --}}Menu Details
                                 </a>
                                 <a href="" class="option2">
@@ -84,42 +90,51 @@
                             </div>
                         </div>
                         <div class="img-box">
-                            <img src="product_photos/{{$products->image}}" alt="">
+                            <img src="/product_photos/{{$product->image}}" alt="">
                         </div>
                         <div class="detail-box">
                             <h6>
-                                {{$products->title}}
-                                
-                            </h6>
-                            @if($products->discount_price !=null)
+                                {{$product->title}}
 
-                            <h6 style="color:red;"> 
-                                Discount Price<br>TK.{{$products->discount_price}}</h6>
-                            
+                            </h6>
+                            @if($product->discount_price !=null)
+
+                            <h6 style="color:red;">
+                                Discount Price<br>TK.{{$product->discount_price}}</h6>
+
                             <h6>
                                 Price<br>
                                <span style="color:green;text-decoration:line-through">
-                                 Tk.{{$products->price}}</span>
+                                 Tk.{{$product->price}}</span>
                             </h6>
                             @else
                             <h6 style="color:green">
                                 Price <br>
-                                Tk.{{$products->price}}
+                                Tk.{{$product->price}}
                             </h6>
                             @endif
                         </div>
                     </div>
 
                 </div>
-                @endforeach
-                {!!$products->appends(Request::all())->links()!!}
+
+                <div class="col-sm-6 col-md-4 col-lg-5" style="margin-top:120px">
+
+                    <h2>Product price :{{$product->title}}</h2>
+                    <h2>Product Category : {{$product->name}}</h2>
+                    <h2>Product Quantity : {{$product->quantity}}</h2>
+
+                      <p>Product Details :{{$product->description}}</p>
+                      {{-- <a href="#" class="btn btn-success">Add to Cart</a> --}}
+                      <form action="{{url('/add_product',$product->id)}}" method="post">
+                        @csrf
+                     <span class="text-red"> Quantity:</span>  <input type="number" name="quantity" value="1" min="1" style="width:80px;"><br>
+                        <input type="submit"  value="Add to Cart" class="btn btn-success text-center mt-2 text_color" >
+                    </form>
+
+                </div>
         </div>
-     
-        {{-- <div class="btn-box">
-  <a href="">
-  View All products
-  </a>
-</div> --}}
+
     </div>
 </section>
 

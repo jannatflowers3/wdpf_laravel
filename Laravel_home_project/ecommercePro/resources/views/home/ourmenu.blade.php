@@ -386,9 +386,14 @@
                                     <a href="{{url('/product_details',$product->id)}}" class="option1">
                                         {{-- {{ $product->title }} --}}Menu Details
                                     </a>
-                                    <a href="" class="option2">
+                                    {{-- <a href="" class="option2">
                                         Buy Now
-                                    </a>
+                                    </a> --}}
+                                    <form action="{{url('/add_product',$product->id)}}" method="post">
+                                        @csrf
+                                     <span class="text-red"> Quantity:</span>  <input type="number" name="quantity" value="1" min="1" style="width:80px;"><br>
+                                        <input type="submit" style="color:#fff;margin-top:5px;font-size:12px;background-color:#FEA116;border:#FEA116;" value="Add to Cart" class="btn btn-success text-center">
+                                    </form>
                                 </div>
                             </div>
                             <div class="img-box">
@@ -397,13 +402,13 @@
                             <div class="detail-box">
                                 <h6>
                                     {{$product->title}}
-                                    
+
                                 </h6>
                                 @if($product->discount_price !=null)
 
-                                <h6 style="color:red;"> 
+                                <h6 style="color:red;">
                                     Discount Price<br>TK.{{$product->discount_price}}</h6>
-                                
+
                                 <h6>
                                     Price<br>
                                    <span style="color:green;text-decoration:line-through">
@@ -422,7 +427,7 @@
                     @endforeach
                     {!!$products->appends(Request::all())->links()!!}
             </div>
-         
+
             {{-- <div class="btn-box">
       <a href="">
       View All products
