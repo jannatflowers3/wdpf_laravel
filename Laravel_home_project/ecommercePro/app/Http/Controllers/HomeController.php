@@ -8,6 +8,8 @@ use App\Models\User;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Cart;
+use Illuminate\Foundation\Auth\User as AuthUser;
+
 class HomeController extends Controller
 {
 
@@ -64,5 +66,24 @@ else{
     else{
         return redirect('login');
     }
+  }
+
+  public function show_cart()
+  {
+  if(Auth::id()){
+    $id =Auth::user()->id;
+    $showcarts = Cart::where('user_id','=', $id)->get();
+    return view('home.showcart',compact('showcarts'));
+  }
+  else{
+    return redirect('/login');
+  }
+  }
+
+  public function product_remove($id)
+  {
+    $card_delete = Cart::find($id);
+    $card_delete->delete();
+    return redirect()->back();
   }
 }

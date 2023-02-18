@@ -70,70 +70,42 @@
     <div class="container">
         <div class="heading_container heading_center text-center">
             <h2>
-                Menu <span>Details</span>
+                show cart
             </h2>
-        </div>
-        <div class="row">
-            <div class="col-lg-2">
+            <div class="showcart">
+                <table class="table table-bordered">
+                    <thead>
+                      <tr class="table-success">
+                        <th>User Name</th>
+                        <th>User Email</th>
+                        <th>Product Price</th>
+                        <th>Product Quantity</th>
+                        <th>Product Image</th>
+                        <th>Action</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <?php  $totalprice = 0?>
+                        @foreach ($showcarts as $showcart)
+
+
+                      <tr class="table-primary">
+                        <th>{{$showcart->name}}</th>
+                        <th>{{$showcart->email}}</th>
+                        <td>{{$showcart->price}}</td>
+                        <td>{{$showcart->quantity}}</td>
+                        <td> <img src="/product_photos/{{$showcart->image}}" alt="foodimg" width="60px"></td>
+                        <td><a href="{{url('/product_remove',$showcart->id)}}"
+                         class="btn btn-danger" onclick="return confirm('Are you sure delete this product')">Delete</a></td>
+
+                    </tr>
+                    <?php $totalprice = $totalprice + $showcart->price ?>
+                    @endforeach
+                    <td colspan="5" class="text-success"> Total Price : {{$totalprice}}</td>
+                    </tbody>
+                  </table>
             </div>
-            {{-- @foreach ($product as $products) --}}
-                <div class="col-sm-6 col-md-4 col-lg-4">
-
-                    <div class="box  wow zoomIn" data-wow-delay="0.2s">
-                        <div class="option_container">
-                            <div class="options">
-                                <a href="{{url('/product_details',$product->id)}}" class="option1">
-                                    {{-- {{ $product->title }} --}}Menu Details
-                                </a>
-                                <a href="" class="option2">
-                                    Buy Now
-                                </a>
-                            </div>
-                        </div>
-                        <div class="img-box">
-                            <img src="/product_photos/{{$product->image}}" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                {{$product->title}}
-
-                            </h6>
-                            @if($product->discount_price !=null)
-
-                            <h6 style="color:red;">
-                                Discount Price<br>TK.{{$product->discount_price}}</h6>
-
-                            <h6>
-                                Price<br>
-                               <span style="color:green;text-decoration:line-through">
-                                 Tk.{{$product->price}}</span>
-                            </h6>
-                            @else
-                            <h6 style="color:green">
-                                Price <br>
-                                Tk.{{$product->price}}
-                            </h6>
-                            @endif
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-sm-6 col-md-4 col-lg-5" style="margin-top:120px">
-
-                    <h2>Product price :{{$product->title}}</h2>
-                    <h2>Product Category : {{$product->name}}</h2>
-                    <h2>Product Quantity : {{$product->quantity}}</h2>
-
-                      <p>Product Details :{{$product->description}}</p>
-                      {{-- <a href="#" class="btn btn-success">Add to Cart</a> --}}
-                      <form action="{{url('/add_product',$product->id)}}" method="post">
-                        @csrf
-                     <span class="text-red"> Quantity:</span>  <input type="number" name="quantity" value="1" min="1" style="width:80px;"><br>
-                        <input type="submit"  value="Add to Cart" class="btn btn-success text-center mt-2 text_color" >
-                    </form>
-
-                </div>
         </div>
 
     </div>

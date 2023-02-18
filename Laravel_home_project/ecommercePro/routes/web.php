@@ -52,4 +52,8 @@ Route::post('/update_product/{id}',[ProductCon::class,'update_product']);
 Route::get('/product_details/{id}',[HomeController::class,'product_details']);
 // add_product route
 Route::post('/add_product/{id}',[HomeController::class,'add_product']);
+Route::get('/show_cart',[HomeController::class,'show_cart']);
+Route::get('/product_remove/{id}',[HomeController::class,'product_remove']);
+
+
 
