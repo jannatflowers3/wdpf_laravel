@@ -72,6 +72,13 @@
             <h2>
                 show cart
             </h2>
+            @if(session()->has('message'));
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert"
+                aria-hidden="true">X</button>
+                {{session()->get('message')}}
+            </div>
+            @endif
             <div class="showcart">
                 <table class="table table-bordered">
                     <thead>
@@ -105,6 +112,10 @@
                     <td colspan="5" class="text-success"> Total Price : {{$totalprice}}</td>
                     </tbody>
                   </table>
+                  <div class="orderlis">
+                    <a href="{{url('/cashon_delivery')}}">Cash on delivery</a>
+                    <a href="{{url('/cashon_delivery')}}"></a>
+                  </div>
             </div>
         </div>
 

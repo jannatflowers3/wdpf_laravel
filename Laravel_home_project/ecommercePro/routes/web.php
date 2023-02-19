@@ -54,6 +54,7 @@ Route::get('/product_details/{id}',[HomeController::class,'product_details']);
 Route::post('/add_product/{id}',[HomeController::class,'add_product']);
 Route::get('/show_cart',[HomeController::class,'show_cart']);
 Route::get('/product_remove/{id}',[HomeController::class,'product_remove']);
+Route::get('/cashon_delivery',[HomeController::class,'cashon_delivery']);
 
 
 
