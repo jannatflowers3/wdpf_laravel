@@ -1,0 +1,31 @@
+ https://www.youtube.com/watch?v=hOF2NQkkyYk&t=383s
+
+ 1.  composer create-project laravel/laravel laravel8Vue_shop
+ 2, env confiq
+ 3. carts,products,
+4. php artisan make:model Cart -mcr
+5. php artisan make:model Product-mcr
+
+ 6. php artisan migrate
+ 7. php artisan make:factory ProductFactory
+ 8. php artisan make:seeder ProductSeeder
+9. php artisan db:seed
+10.composer require laravel/ui
+ 11 .   php artisan ui vue --auth
+ 12. npm install
+ 13. npm run dev
+
+vue 3 version change korte hole 
+1. package.json 
+"vue": "^2.6.12",
+        "vue-loader": "^15.9.8",
+        "vue-template-compiler": "^2.6.12"
+delete korte hobe 
+2.  node_moduels  folder delete korte hbe
+   
+ ########### vue 3/latest version install ################
+....1 npm install vue
+   2 .  npm install vue-loader --save-dev
+   3.   npm install vue-template-loader --save-dev
+  4.   
+

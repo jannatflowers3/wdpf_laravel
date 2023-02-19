@@ -1,0 +1,7 @@
+ https://zarx.biz/link_generation_download/277/build-a-ecommerce-website-from-scratch-laravel-free-download/16406568289e269f75f0
+  1. download and move
+   2. env fonfigure
+   3. php artisan key:generate
+   4.composer install
+   5. php artisan migrate
+   6. php artisan db:seed
