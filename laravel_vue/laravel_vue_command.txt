@@ -27,10 +27,23 @@ delete korte hobe
 ....1 npm install vue
    2 .  npm install vue-loader --save-dev
    3.   npm install vue-template-loader --save-dev
+<<<<<<< HEAD
   4.   
  ############################# laravel product  #############
  1.php artisan make:controller FrontendController
 
 
 
+=======
+  4.   npm run dev
+  5. php atisan migrate
+>>>>>>> 01301d813db6a561a2f10fcce3f88bdb2f7acc6f
 
+
+6. php artisan make:model Product -mfs
+m= migration 
+f= factory
+s = seeder
+ 7. php artisan make:model Cart -m
+
+  8. php artisan migrate:fresh --seed
