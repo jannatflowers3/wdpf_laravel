@@ -15,7 +15,7 @@
  12. npm install
  13. npm run dev
 
-vue 3 version change korte hole 
+###################  vue 3 version change korte hole 
 1. package.json 
 "vue": "^2.6.12",
         "vue-loader": "^15.9.8",
@@ -28,4 +28,9 @@ delete korte hobe
    2 .  npm install vue-loader --save-dev
    3.   npm install vue-template-loader --save-dev
   4.   
+ ############################# laravel product  #############
+ 1.php artisan make:controller FrontendController
+
+
+
 

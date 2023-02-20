@@ -11,6 +11,7 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('css/app.css')}}">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="/frontend_assests/css/bootstrap.min.css" type="text/css">
@@ -24,6 +25,9 @@
 </head>
 
 <body>
+    <div id="app">
+
+     
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -155,7 +159,7 @@
                     <div class="header__cart">
                         <ul>
                             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span> <cart/></span></a></li>
                         </ul>
                         <div class="header__cart__price">item: <span>$150.00</span></div>
                     </div>
@@ -767,6 +771,7 @@
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
+    <script src="{{asset('js/app.js')}}"></script>
     <script src="/frontend_assests/js/jquery-3.3.1.min.js"></script>
     <script src="/frontend_assests/js/bootstrap.min.js"></script>
     <script src="/frontend_assests/js/jquery.nice-select.min.js"></script>
@@ -777,7 +782,7 @@
     <script src="/frontend_assests/js/main.js"></script>
 
 
-
+</div>
 </body>
 
 </html>
