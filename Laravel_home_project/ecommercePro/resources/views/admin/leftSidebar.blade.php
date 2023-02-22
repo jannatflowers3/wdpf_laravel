@@ -48,10 +48,25 @@ style="background-color: #e74a3b;color:#000"   id="accordionSidebar">
     </a>
     <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Food Category:</h6>
+            <h6 class="collapse-header">Food List:</h6>
 
-            <a class="collapse-item" href="{{url('/view_product')}}">View Product</a>
+            <a class="collapse-item" href="{{url('/view_product')}}">Add Product</a>
             <a class="collapse-item" href="{{url('/productList')}}"> Product list</a>
+        </div>
+    </div>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
+        aria-expanded="true" aria-controls="collapseFour">
+        <i class="fa fa-cube"></i>
+        <span>Order</span>
+    </a>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Order List:</h6>
+            <a class="collapse-item" href="{{url('/order_list')}}"> Order List</a>
+            <a class="collapse-item" href="{{url('/add_order')}}">Add Order</a>
         </div>
     </div>
 </li>

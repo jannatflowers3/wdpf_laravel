@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Order;
+
+use Barryvdh\DomPDF\Facade\Pdf;
 class AdminController extends Controller
 {
     public function view_category()
@@ -43,5 +46,28 @@ class AdminController extends Controller
         $delete_cat = Category::find($id);
         $delete_cat->delete();
         return redirect()->back()->with('message',"Category Deleted Successfully");
+    }
+
+    // order list
+    public function order_list()
+    {
+        $order_lists = Order::all();
+      return view('order.order_list',compact('order_lists'));
+    }
+    public function delivered($id)
+    {
+        $order_delivered = order::find($id);
+        $order_delivered->delivery_status = 'Delivered';
+        $order_delivered->payment_status = 'Paid';
+        $order_delivered->save();
+        return redirect()->back();
+    }
+
+    public function print_pdf()
+    {
+        $pdf = Pdf::loadView('order.print_pdf');
+
+
+
     }
 }

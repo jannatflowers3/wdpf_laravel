@@ -115,7 +115,7 @@
                   <div class="orderlis">
                     <h1 style="font-size:30px;padding-bottom:15px">Proceed to Order</h1>
                     <a href="{{url('/cashon_delivery')}}" class="btn btn-success">Cash On Delivery</a>
-                    <a href="{{url('/cashon_delivery')}}" class="btn btn-danger">Pay Using Card</a>
+                    <a href="{{url('/stripe',$totalprice)}}" class="btn btn-danger">Pay Using Card</a>
                   </div>
             </div>
         </div>
