@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Order;
-
-use Barryvdh\DomPDF\Facade\Pdf;
+use PDF;
 class AdminController extends Controller
 {
     public function view_category()
@@ -65,7 +64,7 @@ class AdminController extends Controller
 
     public function print_pdf()
     {
-        $pdf = Pdf::loadView('order.print_pdf');
+        $pdf = PDF::loadView('order.print_pdf');
 
 
 
