@@ -17,7 +17,7 @@ class AdminController extends Controller
 }
 public function deleteuser($id)
 {
-    
+
     $data = User::find($id);
     $data->delete();
     return redirect()->back();
@@ -27,7 +27,7 @@ public function deleteuser($id)
     public function reservation(Request $request)
     {
         $reservation = new Reservation;
-     
+
         $reservation->name = $request->name;
         $reservation->email = $request->email;
         $reservation->phone = $request->phone;
@@ -36,8 +36,8 @@ public function deleteuser($id)
         $reservation->time = $request->time;
         $reservation->message = $request->message;
         $reservation->save();
-        return redirect()->back(); 
-        return redirect('/')->with('msg','successfully reservation'); 
+        return redirect()->back();
+        return redirect('/')->with('msg','successfully reservation');
     }
     public function orderlists()
     {
@@ -50,6 +50,6 @@ public function deleteuser($id)
           $orders = Order::where('foodname','Like','%'.$search.'%')->orWhere
           ('quantity','Like','%'.$search.'%')->orWhere('price','Like','%'.$search.'%')->get();
           return view('admin.orderlist',compact('orders'));
-        
+
     }
 }

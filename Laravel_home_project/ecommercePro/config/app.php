@@ -162,6 +162,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        // "Barryvdh\\DomPDF\\ServiceProvider"
         /*
          * Package Service Providers...
          */
@@ -233,7 +234,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'PDF' => Barryvdh\DomPDF\Facades::class,
 
-
+        // "PDF": "Barryvdh\\DomPDF\\Facade\\Pdf"
     ],
 
 ];

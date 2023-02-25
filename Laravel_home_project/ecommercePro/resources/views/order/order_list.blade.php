@@ -15,6 +15,10 @@ transition: 0.3s;
     color: #fff;
   transform: scale(1.1);
 }
+.order_title{
+    font-size: 50px;
+    color: #e74a3b
+}
 </style>
 
 </head>
@@ -24,7 +28,7 @@ transition: 0.3s;
       <!-- Sidebar -->
         @include('admin.leftSidebar')
         <!-- End of Sidebar -->
-         <!-- Content Wrapper -->
+         <!--   Wrapper -->
       <div id="content-wrapper" class="d-flex flex-column">
         <!-- Main Content -->
         <div id="content">
@@ -42,7 +46,16 @@ transition: 0.3s;
                     {{session()->get('message')}}
                 </div>
                 @endif --}}
-                <h1>Order List</h1>
+
+                <div class="ordersearch text-center">
+                    <h1 class="order_title">Order List</h1>
+                    <form action="{{url('/search')}}" method="get">
+                        @csrf
+                        <input type="search" name="search" placeholder="Search For Something">
+                        <input type="submit" value="Search" name = 'search' class="btn btn-outline-primary">
+                    </form>
+                </div>
+
                 <div class="categoryForm mt-5">
                     <table class="table mt-3">
                         <tr class="thead-dark">
@@ -57,6 +70,7 @@ transition: 0.3s;
                             <th>Image</th>
                             <th>Delivered</th>
                             <th>Invoice</th>
+                            <th>Send Email</th>
                         </tr>
                        @foreach ($order_lists as $order_list)
                            <tr>
@@ -81,6 +95,8 @@ transition: 0.3s;
 
                                     @endif
                             </td>
+                            <td><a class="btn btn-success" href="{{url('print_pdf',$order_list->id)}}">Pdf</a></td>
+                            <td><a class="btn btn-success" href="{{url('send_email',$order_list->id)}}">Send Email</a></td>
 
                         </tr>
                        @endforeach
