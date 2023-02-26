@@ -1,0 +1,10 @@
+1 . composer create-project laravel/laravel laravelVue_project3
+ 2. composer require laravel/ui
+ 3. php artisan ui vue --auth
+ 4. npm install
+ 5. npm run dev
+  6. npm run dev   = for styling
+7. env  coniq = database connection
+ 8. php artisan migrate
+ 9. npm i vue
+10 . npm install vue-loader --save-dev

@@ -5,11 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Order;
+<<<<<<< HEAD
 
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Notifications\Myfirstnotification;
 use Illuminate\Notifications\Notification;
 
+=======
+use PDF;
+>>>>>>> 0fabb40ea251258705e5699548339c836ecb0922
 class AdminController extends Controller
 {
     public function view_category()
@@ -75,9 +79,13 @@ class AdminController extends Controller
     }
     public function send_email($id)
     {
+<<<<<<< HEAD
         $order = order::find($id);
         return view('admin_dashboard.email_info',compact('order'));
     }
+=======
+        $pdf = PDF::loadView('order.print_pdf');
+>>>>>>> 0fabb40ea251258705e5699548339c836ecb0922
 
     public function send_user_email(Request $request ,$id)
     {

@@ -371,10 +371,19 @@
     <!-- Menu section -->
     <section class="product_section layout_padding">
         <div class="container">
-            <div class="heading_container heading_center text-center">
-                <h2>
-                    Our <span>Menu</span>
-                </h2>
+            <div class="row justify-content-center">
+                <div class="heading_container heading_center text-center">
+                    <h2>
+                        Our <span>Menu</span>
+                    </h2>
+                </div>
+                <div class="searchbtn">
+                    <h2>Search Product</h2>
+                    <form action="">
+                        <input type="text" name="searchbtn">
+                        <input type="submit" value="search" class="btn btn-success">
+                    </form>
+                </div>
             </div>
             <div class="row">
                 @foreach ($products as $product)

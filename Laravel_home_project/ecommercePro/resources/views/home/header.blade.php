@@ -25,6 +25,7 @@
                 <a href="menu.html" class="nav-item nav-link">Menu</a>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
                 <a href="{{url('/show_cart')}}" class="nav-item nav-link">Cart</a>
+                <a href="{{url('/show_order')}}" class="nav-item nav-link">Order</a>
             </div>
             @if (Route::has('login'))
             @auth

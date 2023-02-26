@@ -178,6 +178,23 @@ public function stripePost(Request $request ,$totalprice)
 
         return back();
     }
+ public function show_order(){
+    if(Auth::id()){
+        $user  = Auth::user();
+        $userid = $user->id;
+        $orders = order::where('user_id','=',$userid)->get();
 
+        return view('home.order',compact('orders'));
+    }
+    else{
+        return redirect('login');
+    }
+ }
+ public function calcel_order($id)
+ {
+    $order_delete = order::find($id);
+    $order_delete->delete();
+    return redirect()->back();
+ }
 
 }
