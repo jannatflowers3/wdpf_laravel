@@ -51,8 +51,8 @@ transition: 0.3s;
                     <h1 class="order_title">Order List</h1>
                     <form action="{{url('/search')}}" method="get">
                         @csrf
-                        <input type="search" name="search" placeholder="Search For Something">
-                        <input type="submit" value="Search" name = 'search' class="btn btn-outline-primary">
+                        <input type="text" name="search" placeholder="Search For Something">
+                        <input type="submit" value="Search" class="btn btn-outline-primary">
                     </form>
                 </div>
 

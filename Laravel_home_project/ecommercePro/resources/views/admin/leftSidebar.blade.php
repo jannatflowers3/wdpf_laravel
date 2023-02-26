@@ -14,7 +14,7 @@ style="background-color: #e74a3b;color:#000"   id="accordionSidebar">
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{url('redirect')}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Admin Dashboard</span></a>
     </li>

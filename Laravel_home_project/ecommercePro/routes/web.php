@@ -30,7 +30,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
-Route::get('/redirect',[HomeController::class,'redirect'])->middleware('auth','verified');
+Route::get('/redirect',[HomeController::class,'redirect'])->middleware('auth');
 //  admin category route
 Route::get('/view_category',[AdminController::class,'view_category']);
 Route::post('/add_category',[AdminController::class,'add_category']);
