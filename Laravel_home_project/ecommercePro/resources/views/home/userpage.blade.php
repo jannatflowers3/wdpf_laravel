@@ -15,7 +15,7 @@
   @include('home.about')
         <!-- About End -->
 
-
+        @include('sweetalert::alert')
 @include('home.ourmenu')
  <!-- end product section -->
   @include('home.reservation')

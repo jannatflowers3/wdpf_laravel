@@ -111,8 +111,8 @@
                         <td> <img src="/product_photos/{{$order->image}}" alt="foodimg" width="100px"></td>
                         <td>
                             @if($order->delivery_status == 'processing')
-                            <a href="{{url('/calcel_order',$order->id)}}"
-                         class="btn btn-danger" onclick="return confirm('Are you sure delete this product')">Cancle Order</a>
+                            <a  onclick="confirmation(event)" href="{{url('/calcel_order',$order->id)}}"
+                         class="btn btn-danger" onclick="confirmation(event)">Cancle Order</a>
 
                          @else
                          <p class="text-dark">Not Allowed</p>

@@ -18,6 +18,7 @@
 
 <!-- Libraries Stylesheet -->
 <link href="/home_template/lib/animate/animate.min.css" rel="stylesheet">
+
 <link href="/home_template/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 <link href="/home_template/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 

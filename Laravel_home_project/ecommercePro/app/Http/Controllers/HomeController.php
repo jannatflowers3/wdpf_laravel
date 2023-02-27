@@ -11,6 +11,7 @@ use App\Models\Cart;
 use App\Models\Order;
 use Session;
 use Stripe;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Foundation\Auth\User as AuthUser;
 use Symfony\Component\HttpFoundation\Session\Session as SessionSession;
 
@@ -75,6 +76,7 @@ else{
        $cart->image = $product->image;
       $cart->quantity = $request->quantity;
       $cart->save();
+      Alert::info('Product Added Successfully','We have added product to the cart');
             return redirect()->back();
 
     }
@@ -128,7 +130,8 @@ else{
             $cart->delete();
 
          }
-         return redirect()->back()->with('message','We have reciived Your oreder.we will connect with you soon ');
+        //  Alert::info(' Order Successfully');
+         return redirect()->back()->with('message','We have recived Your oreder.we will connect with you soon ');
   }
 
   public function  stripe ($totalprice)
@@ -174,7 +177,7 @@ public function stripePost(Request $request ,$totalprice)
            $cart->delete();
 
         }
-        Session::flash('success', 'Payment successful!');
+        session()::flash('success', 'Payment successful!');
 
         return back();
     }

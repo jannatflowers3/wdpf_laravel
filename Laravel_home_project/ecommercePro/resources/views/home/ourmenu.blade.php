@@ -372,17 +372,19 @@
     <section class="product_section layout_padding">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="heading_container heading_center text-center">
-                    <h2>
-                        Our <span>Menu</span>
-                    </h2>
-                </div>
-                <div class="searchbtn">
-                    <h2>Search Product</h2>
-                    <form action="">
-                        <input type="text" name="searchbtn">
-                        <input type="submit" value="search" class="btn btn-success">
-                    </form>
+                <div class="col-lg-6">
+                    <div class="heading_container heading_center text-center">
+                        <h2>
+                            Our <span>Menu</span>
+                        </h2>
+                    </div>
+                    <div class="searchbtn text-center">
+                        <h2 class="search_producth2">Search Product</h2>
+                        <form action="">
+                            <input type="text" name="product_serach">
+                            <input type="submit" value="search" class="product_serach">
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -434,7 +436,7 @@
 
                     </div>
                     @endforeach
-                    {!!$products->appends(Request::all())->links()!!}
+                    {!!$products->appends(Request::all())->links('pagination::bootstrap-4')!!}
             </div>
 
             {{-- <div class="btn-box">
