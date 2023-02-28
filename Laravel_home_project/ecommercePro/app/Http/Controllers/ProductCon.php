@@ -79,4 +79,10 @@ class ProductCon extends Controller
         $update_product->update();
         return redirect('/productList')->with('message','Update Product Successfully');
     }
+
+    public function menuPage()
+    {
+        $products = Product::all();
+        return view('home.menu_page',compact('products'));
+    }
 }

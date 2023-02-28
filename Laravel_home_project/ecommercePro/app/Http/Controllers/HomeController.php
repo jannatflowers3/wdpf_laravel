@@ -200,4 +200,6 @@ public function stripePost(Request $request ,$totalprice)
     return redirect()->back();
  }
 
+
+
 }

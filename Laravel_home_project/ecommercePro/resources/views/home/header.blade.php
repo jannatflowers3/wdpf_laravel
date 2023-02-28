@@ -20,10 +20,10 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0 pe-4 navcolor">
                 <a href="{{url('/')}}" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Service</a>
-                <a href="menu.html" class="nav-item nav-link">Menu</a>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                {{-- <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="service.html" class="nav-item nav-link">Service</a> --}}
+                <a href="{{url('/menuPage')}}" class="nav-item nav-link">Menu</a>
+                {{-- <a href="contact.html" class="nav-item nav-link">Contact</a> --}}
                 <a href="{{url('/show_cart')}}" class="nav-item nav-link">Cart</a>
                 <a href="{{url('/show_order')}}" class="nav-item nav-link">Order</a>
             </div>

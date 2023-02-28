@@ -69,3 +69,4 @@ Route::get('/search',[AdminController::class,'searchdata']);
 
 Route::get('/show_order',[HomeController::class,'show_order']);
 Route::get('/calcel_order/{id}',[HomeController::class,'calcel_order']);
+Route::get('/menuPage',[ProductCon::class,'menuPage']);

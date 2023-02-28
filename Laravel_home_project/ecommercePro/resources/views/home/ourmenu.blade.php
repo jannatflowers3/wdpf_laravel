@@ -378,13 +378,7 @@
                             Our <span>Menu</span>
                         </h2>
                     </div>
-                    <div class="searchbtn text-center">
-                        <h2 class="search_producth2">Search Product</h2>
-                        <form action="">
-                            <input type="text" name="product_serach">
-                            <input type="submit" value="search" class="product_serach">
-                        </form>
-                    </div>
+
                 </div>
             </div>
             <div class="row">
